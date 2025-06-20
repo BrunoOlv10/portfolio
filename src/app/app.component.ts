@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { AboutComponent } from './components/about/about.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { ServicesComponent } from './components/services/services.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [NavbarComponent, HomeComponent, ProjectsComponent, AboutComponent, ExperienceComponent, ServicesComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

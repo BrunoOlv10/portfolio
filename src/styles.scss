@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/variables.scss' as var;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    color: var.$primary-text;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+body {
+    background-color: var.$main-background;
+}
