@@ -8,7 +8,7 @@
     outline: none;
     list-style: none;
     text-decoration: none;
-    color: var.$primary-text;
+    color: var.$color_primary_text;
 }
 
 button, a {
@@ -16,5 +16,6 @@ button, a {
 }
 
 body {
-    background-color: var.$main-background;
+    background-color: var.$color_main_background;
+    padding: 50px;
 }

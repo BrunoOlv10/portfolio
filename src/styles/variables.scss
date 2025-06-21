@@ -1,12 +1,43 @@
-$main-background: #1E1E1E;
-$skills-background: rgba(217, 217, 217, 0.300);
-$card-background: #2A2A2A;
-$details-background: rgba(51, 51, 51, 0.950);
-$mini-card-background: #333333;
-$mini-card-detail-background: #444444;
+$color_main_background: #1E1E1E;
+$color_skills_background: rgba(217, 217, 217, 0.300);
+$color_card_background: #2A2A2A;
+$color_details_background: rgba(51, 51, 51, 0.950);
+$color_mini_card_background: #333333;
+$color_mini_card_detail_background: #444444;
 
-$primary-gradient: #007CF0;
-$secondary-gradient: #999999;
+$color_blue: #007CF0;
+$color_blue_medium: rgba(0, 124, 240, 0.8);
+$color_gray: #999999;
+$color_gray_medium: rgba(153, 153, 153, 0.8);
 
-$primary-text: #FFFFFF;
-$secondary-text: rgba(255, 255, 255, 0.700);
+$color_footer_strong: rgba(0, 124, 240, 0.6);
+$color_footer_medium: rgba(0, 124, 240, 0.4);
+
+$color_primary_text: #FFFFFF;
+$color_secondary_text: rgba(255, 255, 255, 0.700);
+
+// $gradient_background: linear-gradient(
+//     90deg,
+//     rgba(0, 124, 240, 0.8) 60%,
+//     rgba(153, 153, 153, 0.8) 100%
+// );
+
+// $gradient_footer: linear-gradient(
+//   to top,
+//   rgba(0, 124, 240, 0.6) 10%,
+//   rgba(0, 124, 240, 0.4) 30%,
+//   transparent 100%
+// );
+
+$gradient_background: linear-gradient(
+  90deg,
+  $color_blue_medium 60%,
+  $color_gray_medium 100%
+);
+
+$gradient_footer: linear-gradient(
+  to top,
+  $color_footer_strong 10%,
+  $color_footer_medium 30%,
+  transparent 100%
+);
