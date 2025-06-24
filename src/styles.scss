@@ -9,13 +9,15 @@
     list-style: none;
     text-decoration: none;
     color: var.$color_primary_text;
+    font-family: 'Roboto', sans-serif;
 }
 
-button, a {
-  cursor: pointer;
+button {
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 body {
     background-color: var.$color_main_background;
-    padding: 50px;
+    padding: 50px 0;
 }

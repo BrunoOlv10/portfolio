@@ -6,7 +6,7 @@ $color_mini_card_background: #333333;
 $color_mini_card_detail_background: #444444;
 
 $color_blue: #007CF0;
-$color_blue_medium: rgba(0, 124, 240, 0.8);
+$color_blue_medium: rgba(0, 124, 240, 0.9);
 $color_gray: #999999;
 $color_gray_medium: rgba(153, 153, 153, 0.8);
 
@@ -16,20 +16,7 @@ $color_footer_medium: rgba(0, 124, 240, 0.4);
 $color_primary_text: #FFFFFF;
 $color_secondary_text: rgba(255, 255, 255, 0.700);
 
-// $gradient_background: linear-gradient(
-//     90deg,
-//     rgba(0, 124, 240, 0.8) 60%,
-//     rgba(153, 153, 153, 0.8) 100%
-// );
-
-// $gradient_footer: linear-gradient(
-//   to top,
-//   rgba(0, 124, 240, 0.6) 10%,
-//   rgba(0, 124, 240, 0.4) 30%,
-//   transparent 100%
-// );
-
-$gradient_background: linear-gradient(
+$gradient_main: linear-gradient(
   90deg,
   $color_blue_medium 60%,
   $color_gray_medium 100%

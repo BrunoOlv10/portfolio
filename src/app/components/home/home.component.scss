@@ -1,0 +1,73 @@
+@use '../../../styles/variables.scss' as var; 
+
+:host {
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 100px;
+    border: 1px solid red;
+
+    h1 {
+        font-size: 70px;
+        width: 700px;
+        text-align: center;
+        font-weight: bold;
+        color: var.$color_secondary_text;
+        margin: 0 auto;
+
+        span {
+            background: var.$gradient_main;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .name {
+        font-size: 50px;
+    }
+
+    .area {
+        font-size: 30px;
+        color: var.$color_secondary_text;
+        width: 400px;
+        text-align: center;
+    }
+
+    .photos-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 90px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 50px;
+
+        button {
+            width: 140px;
+            height: 55px;
+            background: var.$gradient_main;
+
+            a {
+                font-size: 20px;
+            }
+        }
+    }
+
+    img {
+        width: 225px;
+        height: 225px;
+        border-radius: 50%;
+        background: var.$gradient_main border-box;
+        border: 7px solid transparent;
+    }
+}

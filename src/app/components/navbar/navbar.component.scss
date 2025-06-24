@@ -1,28 +1,26 @@
 @use '../../../styles/variables.scss' as var;
 
-:host {
-    nav {
-        margin: auto;
-        background: var.$gradient_background;
-        width: 460px;
-        height: 40px;
-        border-radius: 20px;
+nav {
+    margin: auto;
+    background: var.$gradient_main;
+    width: 460px;
+    height: 40px;
+    border-radius: 20px;
 
-        ul {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            height: 100%;
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
 
-            li {
-                a {
-                    transition: 0.5s;
-                }
+        li {
+            a {
+                transition: 0.5s;
+            }
 
-               a:hover {
-                color: var.$color_secondary_text;
-               }
+            a:hover {
+            color: var.$color_secondary_text;
             }
         }
     }
