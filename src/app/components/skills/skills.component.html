@@ -1,1 +1,9 @@
-<p>skills works!</p>
+<div class="icon-container">
+    <div class="icon-content">
+        @for (_ of [].constructor(repeatCount); track _) {
+            @for (icon of icons; track icon) {
+                <i [class]="icon"></i>
+            }
+        }
+    </div>
+</div>
