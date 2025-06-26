@@ -3,7 +3,7 @@
 :host {
     max-width: 1200px;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 150px;
     // border: 1px solid red;
 
     h1 {
@@ -27,47 +27,74 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-    }
 
-    .name {
-        font-size: 50px;
-        font-weight: 500;
-    }
+        .name-area {
+            width: 410px;
+    
+            .name {
+                font-size: 50px;
+                font-weight: 500;
+            }
+        
+            .cursor {
+                display: inline-block;
+                width: 10px;
+                color: var.$color_secondary_text;
+                animation: blink 0.8s infinite;
+            }
+        
+            .area {
+                font-size: 30px;
+                color: var.$color_secondary_text;
+                width: 400px;
+                text-align: center;
+            }
+        }
+    
+        .photos-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            
+            img {
+                width: 225px;
+                height: 225px;
+                border-radius: 50%;
+                background: var.$gradient_main border-box;
+                border: 7px solid transparent;
+            }
+    
+            .buttons {
+                display: flex;
+                gap: 50px;
 
-    .area {
-        font-size: 30px;
-        color: var.$color_secondary_text;
-        width: 400px;
-        text-align: center;
-    }
+                .btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 140px;
+                    height: 50px;
+                    background: var.$gradient_main;
+                    border-radius: 20px;
+                    font-size: 18px;
+                    transition: 0.5s;
+                }
 
-    .photos-button {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .buttons {
-        display: flex;
-        gap: 50px;
-
-        button {
-            width: 140px;
-            height: 55px;
-            background: var.$gradient_main;
-
-            a {
-                font-size: 20px;
+                .btn:hover {
+                    transform: scale(1.1);
+                }
             }
         }
     }
+}
 
-    img {
-        width: 225px;
-        height: 225px;
-        border-radius: 50%;
-        background: var.$gradient_main border-box;
-        border: 7px solid transparent;
+@keyframes blink {
+    0%, 100% { 
+        opacity: 1;
+    }
+
+    50% { 
+        opacity: 0; 
     }
 }

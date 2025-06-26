@@ -7,5 +7,38 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  fullText = '<Bruno Oliveira />';
+  displayedText = '';
+  index = 0;
+  typingSpeed = 150;
+  pauseDuration = 3000;
+  deleting = false;
 
+  ngOnInit(): void {
+    this.startTyping();
+  }
+
+  startTyping(): void {
+    if (this.deleting) {
+      if (this.index > 0) {
+        this.index--;
+        this.displayedText = this.fullText.substring(0, this.index);
+        setTimeout(() => this.startTyping(), this.typingSpeed / 2);
+      } else {
+        this.deleting = false;
+        setTimeout(() => this.startTyping(), 1000);
+      }
+    } else {
+      if (this.index < this.fullText.length) {
+        this.displayedText += this.fullText.charAt(this.index);
+        this.index++;
+        setTimeout(() => this.startTyping(), this.typingSpeed);
+      } else {
+        setTimeout(() => {
+          this.deleting = true;
+          this.startTyping();
+        }, this.pauseDuration);
+      }
+    }
+  }
 }
