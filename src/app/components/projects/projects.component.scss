@@ -20,7 +20,35 @@
     .project-cards {
         display: flex;
         justify-content: center;
-        gap: 50px;
+        align-items: center;
+        gap: 30px;
+
+        button {
+            padding: 10px 11px;
+            border-radius: 50%;
+            background-color: var.$color_blue;
+            transition: 0.5s;
+
+            .arrow {
+                font-size: 15px;
+            }
+        }
+
+        button:hover {
+            background-color: var.$color_blue_medium;
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .cards {
+            display: flex;
+            gap: 50px;
+            max-width: 1000px;
+            overflow: hidden;
+        }
         
         .card, header, .image-container, img, .technologys-container, .buttons {
             width: 300px;

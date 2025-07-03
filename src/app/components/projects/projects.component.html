@@ -1,64 +1,31 @@
 <h2>Projetos</h2>
 
 <section class="project-cards">
-    <div class="card">
-        <header>
-            <h3>Projeto 1</h3>
-        </header>
-        <div class="image-container">
-            <img src="assets/projects/furia/tela-infos.png" alt="Foto Principal Projeto Furia">
-        </div>
-        <div class="technologys-container">
-            <div class="technologys-content">
-                <p class="technology">Angular</p>
-                <p class="technology">TypeScript</p>
-                <p class="technology">C#</p>
-                <p class="technology">SQL Server</p>
+    <button (click)="scrollLeft()" [disabled]="atStart"><i class="fa fa-arrow-left arrow"></i></button>
+
+    <div class="cards" #cardsContainer>
+        @for (project of projects; track project) {
+            <div class="card">
+                <header>
+                    <h3>{{project.title}}</h3>
+                </header>
+                <div class="image-container">
+                     <img [src]="project.image" [alt]="'Imagem Principal do Projeto ' + project.title">
+                </div>
+                <div class="technologys-container">
+                    <div class="technologys-content">
+                        @for (tech of project.technologies; track tech) {
+                            <p class="technology">{{tech}}</p>
+                        }
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a [href]="project.detailsUrl" class="btn">Detalhes</a>
+                    <a [href]="project.accessUrl" class="btn">Acessar</a>
+                </div>
             </div>
-        </div>
-        <div class="buttons">
-            <a href="#" class="btn">Detalhes</a>
-            <a href="#" class="btn">Acessar</a>
-        </div>
+        }
     </div>
-    <div class="card">
-        <header>
-            <h3>Projeto 1</h3>
-        </header>
-        <div class="image-container">
-            <img src="assets/projects/furia/tela-infos.png" alt="Foto Principal Projeto Furia">
-        </div>
-        <div class="technologys-container">
-            <div class="technologys-content">
-                <p class="technology">Angular</p>
-                <p class="technology">TypeScript</p>
-                <p class="technology">C#</p>
-                <p class="technology">SQL Server</p>
-            </div>
-        </div>
-        <div class="buttons">
-            <a href="#" class="btn">Detalhes</a>
-            <a href="#" class="btn">Acessar</a>
-        </div>
-    </div>
-    <div class="card">
-        <header>
-            <h3>Projeto 1</h3>
-        </header>
-        <div class="image-container">
-            <img src="assets/projects/furia/tela-infos.png" alt="Foto Principal Projeto Furia">
-        </div>
-        <div class="technologys-container">
-            <div class="technologys-content">
-                <p class="technology">Angular</p>
-                <p class="technology">TypeScript</p>
-                <p class="technology">C#</p>
-                <p class="technology">SQL Server</p>
-            </div>
-        </div>
-        <div class="buttons">
-            <a href="#" class="btn">Detalhes</a>
-            <a href="#" class="btn">Acessar</a>
-        </div>
-    </div>
+
+    <button (click)="scrollRight()" [disabled]="atEnd"><i class="fa fa-arrow-right arrow"></i></button>
 </section>
