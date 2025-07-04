@@ -1,9 +1,7 @@
 <div class="icon-container">
     <div class="icon-content">
-        @for (_ of [].constructor(repeatCount); track _) {
-            @for (icon of icons; track icon) {
-                <i [class]="icon"></i>
-            }
+        @for (icon of repeatedIcons; let i = $index; track i) {
+            <i [class]="icon"></i>
         }
     </div>
 </div>

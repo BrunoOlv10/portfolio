@@ -20,8 +20,14 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a [href]="project.detailsUrl" class="btn">Detalhes</a>
-                    <a [href]="project.accessUrl" class="btn">Acessar</a>
+                    <a class="btn" (click)="openProjectDetails(project)">
+                        <i class="fa-solid fa-plus"></i>
+                        Detalhes
+                    </a>
+                    <a [href]="project.accessUrl" class="btn">
+                        <i class="fa-solid fa-link"></i>
+                        Acessar
+                    </a>
                 </div>
             </div>
         }
@@ -29,3 +35,12 @@
 
     <button (click)="scrollRight()" [disabled]="atEnd"><i class="fa fa-arrow-right arrow"></i></button>
 </section>
+
+@if (selectedProject) {
+  <div class="modal-overlay">
+    <app-project-details
+      [project]="selectedProject"
+      (close)="closeProjectDetails()">
+    </app-project-details>
+  </div>
+}

@@ -38,4 +38,12 @@ export class SkillsComponent {
     const iconsPerRow = this.icons.length * iconWidth;
     this.repeatCount = Math.ceil(minWidthNeeded / iconsPerRow);
   }
+
+  get repeatedIcons(): string[] {
+    const arr: string[] = [];
+    for (let i = 0; i < this.repeatCount; i++) {
+      arr.push(...this.icons);
+    }
+    return arr;
+  }
 }

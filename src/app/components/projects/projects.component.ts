@@ -1,8 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ProjectDetailsComponent } from '../project-details/project-details.component';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [ProjectDetailsComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -11,48 +12,52 @@ export class ProjectsComponent {
 
   atStart = true;
   atEnd = false;
-
-  ngAfterViewInit() {
-    this.checkScroll();
-  }
+  selectedProject: any = null;
    
   projects = [
     {
       title: 'Exemplo 1',
       image: 'assets/projects/furia/tela-infos.png',
       technologies: ['Angular', 'TypeScript', 'C#', 'SQL Server'],
-      detailsUrl: '#',
       accessUrl: '#'
     },
     {
       title: 'Exemplo 2',
       image: 'assets/projects/furia/tela-infos.png',
       technologies: ['React', 'JavaScript', 'Python', 'MySQL'],
-      detailsUrl: '#',
       accessUrl: '#'
     },
     {
       title: 'Exemplo 3',
       image: 'assets/projects/furia/tela-infos.png',
       technologies: ['Vue', 'TypeScript', 'Java'],
-      detailsUrl: '#',
       accessUrl: '#'
     },
     {
       title: 'Exemplo 4',
       image: 'assets/projects/furia/tela-infos.png',
       technologies: ['Angular', 'JavaScript', 'C#', 'MySQL'],
-      detailsUrl: '#',
       accessUrl: '#'
     },
     {
       title: 'Exemplo 5',
       image: 'assets/projects/furia/tela-infos.png',
       technologies: ['Angular', 'JavaScript', 'C#', 'MySQL'],
-      detailsUrl: '#',
       accessUrl: '#'
     },
   ];
+
+  ngAfterViewInit() {
+    this.checkScroll();
+  }
+
+  openProjectDetails(project: any) {
+    this.selectedProject = project;
+  }
+
+  closeProjectDetails() {
+    this.selectedProject = null;
+  }
 
   getCardScrollDistance(): number {
     const container = this.cardsContainer.nativeElement;
