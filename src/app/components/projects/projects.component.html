@@ -37,7 +37,7 @@
 </section>
 
 @if (selectedProject) {
-  <div class="modal-overlay">
+  <div class="modal-projects" @modalAnimation>
     <app-project-details
       [project]="selectedProject"
       (close)="closeProjectDetails()">

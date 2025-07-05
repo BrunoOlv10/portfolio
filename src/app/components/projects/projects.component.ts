@@ -1,18 +1,32 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
+import { Project } from '../../models/project.model';
+import {trigger, style, animate, transition} from '@angular/animations';
+
+export const fadeInZoomUp = trigger('modalAnimation', [
+  transition(':enter', [
+    style({ opacity: 0, transform: 'scale(0.9) translateY(20px)' }),
+    animate('300ms ease-out', style({ opacity: 1, transform: 'scale(1) translateY(0)' }))
+  ]),
+  transition(':leave', [
+    animate('300ms ease-in', style({ opacity: 0, transform: 'scale(0.9) translateY(20px)' }))
+  ])
+]);
 
 @Component({
   selector: 'app-projects',
   imports: [ProjectDetailsComponent],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
+  animations: [fadeInZoomUp],
 })
+
 export class ProjectsComponent {
   @ViewChild('cardsContainer', { static: true }) cardsContainer!: ElementRef<HTMLDivElement>;
 
   atStart = true;
   atEnd = false;
-  selectedProject: any = null;
+  selectedProject: Project | null = null;
    
   projects = [
     {

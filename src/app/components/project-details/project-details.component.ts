@@ -1,17 +1,18 @@
-import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
+import { Project, ProjectScreen } from '../../models/project.model';
 
 @Component({
   selector: 'app-project-details',
   imports: [],
   templateUrl: './project-details.component.html',
-  styleUrl: './project-details.component.scss'
+  styleUrl: './project-details.component.scss',
 })
 export class ProjectDetailsComponent {
-  @Input() project: any;
+  @Input() project!: Project;
   @Output() close = new EventEmitter<void>();
 
-  currentProject: any = null;
-  selectedScreen: any = null;
+  currentProject!: Project;
+  selectedScreen!: ProjectScreen;
 
   @ViewChild('cardsContainer', { static: true }) cardsContainer!: ElementRef<HTMLDivElement>;
   atStart = true;
@@ -120,8 +121,8 @@ export class ProjectDetailsComponent {
   }
 
   loadProjectDetails() {
-    this.currentProject = this.projectDatas.find(p => p.title === this.project?.title);
-    this.selectedScreen = this.currentProject?.screens[0] || null;
+    this.currentProject = this.projectDatas.find(p => p.title === this.project.title)!;
+    this.selectedScreen = this.currentProject.screens[0];
 
     setTimeout(() => {
       this.checkScroll();
@@ -137,7 +138,6 @@ export class ProjectDetailsComponent {
     const card = container.querySelector('.card') as HTMLElement;
 
     const cardWidth = card.offsetWidth;
-
     const containerStyle = getComputedStyle(container);
     const gap = parseFloat(containerStyle.gap) || 0;
 
@@ -168,18 +168,20 @@ export class ProjectDetailsComponent {
 
     const cards = container.querySelectorAll('.card');
     let closestCardIndex = 0;
-    let minDistance = Number.POSITIVE_INFINITY;
+    let minDistance = Infinity;
+
+    const containerLeft = container.getBoundingClientRect().left;
 
     cards.forEach((card, index) => {
-      const rect = (card as HTMLElement).getBoundingClientRect();
-      const distanceFromLeft = Math.abs(rect.left - container.getBoundingClientRect().left);
+      const rect = (card as HTMLElement).getBoundingClientRect().left;
+      const distanceFromLeft = Math.abs(rect - containerLeft);
       if (distanceFromLeft < minDistance) {
-        minDistance = distanceFromLeft;
         closestCardIndex = index;
+        minDistance = distanceFromLeft;
       }
     });
 
-    const newScreen = this.currentProject?.screens[closestCardIndex];
+    const newScreen = this.currentProject.screens[closestCardIndex];
     if (newScreen && newScreen !== this.selectedScreen) {
       this.selectedScreen = newScreen;
     }
