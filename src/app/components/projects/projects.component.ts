@@ -2,6 +2,14 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
 import { Project } from '../../models/project.model';
 import {trigger, style, animate, transition} from '@angular/animations';
+import { CommonModule } from '@angular/common';
+
+export const cardAnimation = trigger('cardAnimation', [
+  transition(':enter', [
+    style({ opacity: 0, transform: 'translateY(250px)' }),
+    animate('1000ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+  ])
+]);
 
 export const fadeInZoomUp = trigger('modalAnimation', [
   transition(':enter', [
@@ -15,20 +23,27 @@ export const fadeInZoomUp = trigger('modalAnimation', [
 
 @Component({
   selector: 'app-projects',
-  imports: [ProjectDetailsComponent],
+  imports: [ProjectDetailsComponent, CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
-  animations: [fadeInZoomUp],
+  animations: [cardAnimation, fadeInZoomUp],
 })
 
 export class ProjectsComponent {
-  @ViewChild('cardsContainer', { static: true }) cardsContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('projectsSection') projectsSection!: ElementRef<HTMLDivElement>;
+  @ViewChild('cardsContainer') cardsContainer!: ElementRef<HTMLDivElement>;
 
   atStart = true;
   atEnd = false;
   selectedProject: Project | null = null;
+
+  showCards = false;
+
+  trackProject(index: number, project: Project): string {
+    return project.title;
+  }
    
-  projects = [
+  projects: Project[] = [
     {
       title: 'Exemplo 1',
       image: 'assets/projects/furia/tela-infos.png',
@@ -62,7 +77,21 @@ export class ProjectsComponent {
   ];
 
   ngAfterViewInit() {
-    this.checkScroll();
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting && !this.showCards) {
+        this.showCards = true;
+        observer.disconnect();
+
+        setTimeout(() => {
+          this.checkScroll();
+        }, 0);
+      }
+    }, { 
+      rootMargin: '0px 0px -200px 0px'
+    });
+
+    observer.observe(this.projectsSection.nativeElement);
   }
 
   openProjectDetails(project: any) {

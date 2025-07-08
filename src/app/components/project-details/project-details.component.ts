@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
-import { Project, ProjectScreen } from '../../models/project.model';
+import { Project, ProjectDetails, ProjectScreen } from '../../models/project.model';
 
 @Component({
   selector: 'app-project-details',
@@ -11,7 +11,7 @@ export class ProjectDetailsComponent {
   @Input() project!: Project;
   @Output() close = new EventEmitter<void>();
 
-  currentProject!: Project;
+  currentProject!: ProjectDetails;
   selectedScreen!: ProjectScreen;
 
   @ViewChild('cardsContainer', { static: true }) cardsContainer!: ElementRef<HTMLDivElement>;
