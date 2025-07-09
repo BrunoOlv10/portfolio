@@ -1,7 +1,9 @@
 <h2 [@cardAnimation]="showCards ? 'visible' : 'hidden'">Projetos</h2>
 
 <section class="project-cards" #projectsSection [@cardAnimation]="showCards ? 'visible' : 'hidden'">
-    <button (click)="scrollLeft()" [disabled]="atStart" *ngIf="showCards" @cardAnimation><i class="fa fa-arrow-left arrow"></i></button>
+    <button (click)="scrollLeft()" [disabled]="atStart" *ngIf="showCards" @cardAnimation>
+        <i class="fa fa-arrow-left arrow"></i>
+    </button>
     
     <div class="cards" #cardsContainer *ngIf="showCards">
         <div class="card" *ngFor="let project of projects; trackBy: trackProject" [@cardAnimation]="showCards ? 'visible' : 'hidden'">
@@ -31,7 +33,9 @@
         </div>
     </div>
 
-    <button (click)="scrollRight()" [disabled]="atEnd" *ngIf="showCards" @cardAnimation><i class="fa fa-arrow-right arrow"></i></button>
+    <button (click)="scrollRight()" [disabled]="atEnd" *ngIf="showCards" @cardAnimation>
+        <i class="fa fa-arrow-right arrow"></i>
+    </button>
 </section>
 
 @if (selectedProject) {

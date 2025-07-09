@@ -1,0 +1,117 @@
+@use '../../../styles/variables.scss' as var; 
+
+:host {
+    section {
+        display: flex;
+        justify-content: space-around;
+        gap: 100px;
+        max-width: 1200px;
+        padding: 0 100px;
+        margin-bottom: 80px;
+
+        .about-resume {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: max-content;
+
+            img {
+                width: 225px;
+                height: 225px;
+                border-radius: 50%;
+                background: var.$gradient_main border-box;
+                border: 7px solid transparent;
+            }
+
+            .name-role {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-weight: 500;
+                margin: 20px 0 30px 0;
+
+                .name {
+                    font-size: 50px;
+                    margin-bottom: 10px;
+                }
+    
+                .role {
+                    width: 350px;
+                    font-size: 30px;
+                    color: var.$color_secondary_text;
+                }
+            }
+
+            .social-media {
+                display: flex;
+                gap: 25px;
+
+                a {
+                    i {
+                        font-size: 40px;
+                        transition: 0.5s;
+                    }
+
+                    i:hover {
+                        color: var.$color_blue;
+                    }
+                }
+            }
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2 {
+                font-size: 50px;
+                background: var.$gradient_main;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 40px;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                p {
+                    line-height: 30px;
+                    color: var.$color_secondary_text;
+                    font-weight: 500;
+
+                    span {
+                        color: var.$color_primary_text;
+                    }
+                }
+            }
+
+            .buttons {
+                display: flex;
+                gap: 50px;
+                margin-top: 40px;
+
+                .btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 140px;
+                    height: 50px;
+                    background: var.$gradient_main;
+                    border-radius: 20px;
+                    font-size: 18px;
+                    transition: 0.5s;
+                }
+
+                .btn:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
