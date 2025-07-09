@@ -1,14 +1,20 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
 import { Project } from '../../models/project.model';
-import {trigger, style, animate, transition} from '@angular/animations';
+import {trigger, style, animate, transition, state} from '@angular/animations';
 import { CommonModule } from '@angular/common';
 
 export const cardAnimation = trigger('cardAnimation', [
-  transition(':enter', [
-    style({ opacity: 0, transform: 'translateY(250px)' }),
-    animate('1000ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-  ])
+  state('hidden', style({
+    opacity: 0,
+    transform: 'translateY(250px)',
+  })),
+  state('visible', style({
+    opacity: 1,
+    transform: 'translateY(0)',
+  })),
+  transition('hidden => visible', animate('1500ms ease-out')),
+  transition('visible => hidden', animate('500ms ease-in'))
 ]);
 
 export const fadeInZoomUp = trigger('modalAnimation', [
@@ -79,16 +85,11 @@ export class ProjectsComponent {
   ngAfterViewInit() {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      if (entry.isIntersecting && !this.showCards) {
-        this.showCards = true;
-        observer.disconnect();
+      this.showCards = entry.isIntersecting;
 
-        setTimeout(() => {
-          this.checkScroll();
-        }, 0);
+      if (entry.isIntersecting) {
+        setTimeout(() => this.checkScroll(), 0);
       }
-    }, { 
-      rootMargin: '0px 0px -200px 0px'
     });
 
     observer.observe(this.projectsSection.nativeElement);

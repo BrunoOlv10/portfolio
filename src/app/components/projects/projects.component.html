@@ -1,10 +1,10 @@
-<h2 *ngIf="showCards" @cardAnimation>Projetos</h2>
+<h2 [@cardAnimation]="showCards ? 'visible' : 'hidden'">Projetos</h2>
 
-<section class="project-cards" #projectsSection>
+<section class="project-cards" #projectsSection [@cardAnimation]="showCards ? 'visible' : 'hidden'">
     <button (click)="scrollLeft()" [disabled]="atStart" *ngIf="showCards" @cardAnimation><i class="fa fa-arrow-left arrow"></i></button>
     
     <div class="cards" #cardsContainer *ngIf="showCards">
-        <div class="card" *ngFor="let project of projects; trackBy: trackProject" @cardAnimation>
+        <div class="card" *ngFor="let project of projects; trackBy: trackProject" [@cardAnimation]="showCards ? 'visible' : 'hidden'">
             <header>
                 <h3>{{project.title}}</h3>
             </header>
