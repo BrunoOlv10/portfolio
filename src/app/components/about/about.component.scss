@@ -1,13 +1,14 @@
 @use '../../../styles/variables.scss' as var; 
 
 :host {
+    margin-bottom: 80px;
+
     section {
         display: flex;
         justify-content: space-around;
         gap: 100px;
         max-width: 1200px;
         padding: 0 100px;
-        margin-bottom: 80px;
 
         .about-resume {
             display: flex;
@@ -56,6 +57,62 @@
                     i:hover {
                         color: var.$color_blue;
                     }
+                }
+
+                .email-container {
+                    position: relative;
+
+                    .email-button {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        position: absolute;
+                        visibility: hidden;
+                        opacity: 0;
+                        pointer-events: none;
+                        background-color: var.$color_mini_card_background;
+                        bottom: 95%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 14px;
+                        border-radius: 5px;
+                        padding: 6px 4px 6px 10px;
+                        transition: opacity 0.5s;
+                        z-index: 1;
+
+                        .copy-btn {
+                            background: none;
+                            border: 1px solid var.$color_primary_text;
+                            font-size: 12px;
+                            border-radius: 5px;
+                            padding: 2px 6px;
+                        }
+
+                        .copy-btn:hover {
+                            background: var.$color_button_hover;
+                        }
+
+                        .copied-feedback {
+                            color: var.$color_copied_feedback_text;
+                            opacity: 0;
+                            max-width: 0;
+                            font-size: 12px;
+                            overflow: hidden;
+                            transition: opacity 0.5s, max-width 0.5s;
+                        }
+                    }
+
+                    .email-button.copied .copied-feedback {
+                        opacity: 1;
+                        max-width: 100px;
+                        padding-right: 6px;
+                    }
+                }
+
+                .email-container:hover .email-button {
+                    visibility: visible;
+                    opacity: 1;
+                    pointer-events: auto;
                 }
             }
         }

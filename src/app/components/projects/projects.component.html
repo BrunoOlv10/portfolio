@@ -1,4 +1,4 @@
-<h2 [@cardAnimation]="showCards ? 'visible' : 'hidden'">Projetos</h2>
+<h2 id="projects" [@cardAnimation]="showCards ? 'visible' : 'hidden'">Projetos</h2>
 
 <section class="project-cards" #projectsSection [@cardAnimation]="showCards ? 'visible' : 'hidden'">
     <button (click)="scrollLeft()" [disabled]="atStart" *ngIf="showCards" @cardAnimation>
