@@ -1,19 +1,20 @@
-<h1 id="home">Criando <span>soluções</span> que <span>impactam</span> vidas</h1>
-<section class="content">
-    <div class="name-area">
-        <p class="name">
-            <span>{{ displayedText }}</span><span class="cursor">|</span>
-            <!-- &lt;Bruno Oliveira /&gt; -->
-        </p>
-        <p class="area">Desenvolvedor Full-Stack com foco em Back-End</p>
-    </div>
-
-    <div class="photos-button">
-        <img src="assets/images/bruno-oliveira-perfil.jpg" alt="Foto Perfil Bruno Oliveira">
+<section id="home">
+    <h1>Criando <span>soluções</span> que <span>impactam</span> vidas</h1>
+    <div class="content">
+        <div class="name-area">
+            <p class="name">
+                <span>{{ displayedText }}</span><span class="cursor">|</span>
+                <!-- &lt;Bruno Oliveira /&gt; -->
+            </p>
+            <p class="area">Desenvolvedor Full-Stack com foco em Back-End</p>
+        </div>
+        <div class="photos-button">
+            <img src="assets/images/bruno-oliveira-perfil.jpg" alt="Foto Perfil Bruno Oliveira">
         
-        <div class="buttons">
-            <a href="#about" class="btn">Contatar</a>
-            <a href="#projects" class="btn">Projetos</a>
+            <div class="buttons">
+                <a (click)="scrollToSection('about')" class="btn">Contatar</a>
+                <a (click)="scrollToSection('projects')" class="btn">Projetos</a>
+            </div>
         </div>
     </div>
 </section>

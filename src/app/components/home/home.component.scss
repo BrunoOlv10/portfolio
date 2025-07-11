@@ -1,52 +1,54 @@
-@use '../../../styles/variables.scss' as var; 
+@use '../../../styles/variables.scss' as var;
 
 :host {
-    max-width: 1200px;
-    width: 100%;
-    margin-top: 150px;
+    section {
+        width: 1200px;
+        margin-top: 150px;
 
-    h1 {
-        font-size: 70px;
-        width: 700px;
-        text-align: center;
-        font-weight: bold;
-        color: var.$color_secondary_text;
-        margin: 0 auto 90px auto;
+        h1 {
+            font-size: 70px;
+            width: 700px;
+            text-align: center;
+            font-weight: bold;
+            color: var.$color_secondary_text;
+            margin: 0 auto 90px auto;
 
-        span {
-            background: var.$gradient_main;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
+            span {
+                background: var.$gradient_main;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                -webkit-text-fill-color: transparent;
+            }
         }
-    }
 
-    .content {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+         .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
 
-        .name-area {
-            width: 410px;
-    
-            .name {
-                font-size: 50px;
-                font-weight: 500;
-            }
+            .name-area {
+                width: 410px;
         
-            .cursor {
-                display: inline-block;
-                width: 10px;
-                color: var.$color_secondary_text;
-                animation: blink 0.8s infinite;
-            }
-        
-            .area {
-                font-size: 30px;
-                color: var.$color_secondary_text;
-                width: 400px;
-                text-align: center;
+                .name {
+                    font-size: 50px;
+                    font-weight: 500;
+                }
+            
+                .cursor {
+                    display: inline-block;
+                    width: 10px;
+                    color: var.$color_secondary_text;
+                    animation: blink 0.8s infinite;
+                }
+            
+                .area {
+                    font-size: 30px;
+                    color: var.$color_secondary_text;
+                    width: 400px;
+                    text-align: center;
+                }
             }
         }
     
@@ -85,15 +87,5 @@
                 }
             }
         }
-    }
-}
-
-@keyframes blink {
-    0%, 100% { 
-        opacity: 1;
-    }
-
-    50% { 
-        opacity: 0; 
     }
 }

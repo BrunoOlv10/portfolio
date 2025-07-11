@@ -1,38 +1,15 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
-import { Project } from '../../models/project.model';
-import {trigger, style, animate, transition, state} from '@angular/animations';
+import { Project } from '../../shared/models/project.model';
 import { CommonModule } from '@angular/common';
-
-export const cardAnimation = trigger('cardAnimation', [
-  state('hidden', style({
-    opacity: 0,
-    transform: 'translateY(250px)',
-  })),
-  state('visible', style({
-    opacity: 1,
-    transform: 'translateY(0)',
-  })),
-  transition('hidden => visible', animate('1500ms ease-out')),
-  transition('visible => hidden', animate('500ms ease-in'))
-]);
-
-export const fadeInZoomUp = trigger('modalAnimation', [
-  transition(':enter', [
-    style({ opacity: 0, transform: 'scale(0.9) translateY(20px)' }),
-    animate('300ms ease-out', style({ opacity: 1, transform: 'scale(1) translateY(0)' }))
-  ]),
-  transition(':leave', [
-    animate('300ms ease-in', style({ opacity: 0, transform: 'scale(0.9) translateY(20px)' }))
-  ])
-]);
+import { fadeSlideUp, fadeInZoomUp } from '../../shared/animations/animations';
 
 @Component({
   selector: 'app-projects',
   imports: [ProjectDetailsComponent, CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
-  animations: [cardAnimation, fadeInZoomUp],
+  animations: [fadeSlideUp, fadeInZoomUp],
 })
 
 export class ProjectsComponent {
@@ -44,10 +21,6 @@ export class ProjectsComponent {
   selectedProject: Project | null = null;
 
   showCards = false;
-
-  trackProject(index: number, project: Project): string {
-    return project.title;
-  }
    
   projects: Project[] = [
     {
@@ -93,6 +66,10 @@ export class ProjectsComponent {
     });
 
     observer.observe(this.projectsSection.nativeElement);
+  }
+
+  trackProject(index: number, project: Project): string {
+    return project.title;
   }
 
   openProjectDetails(project: any) {

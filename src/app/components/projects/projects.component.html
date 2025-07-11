@@ -1,45 +1,45 @@
-<h2 id="projects" [@cardAnimation]="showCards ? 'visible' : 'hidden'">Projetos</h2>
-
-<section class="project-cards" #projectsSection [@cardAnimation]="showCards ? 'visible' : 'hidden'">
-    <button (click)="scrollLeft()" [disabled]="atStart" *ngIf="showCards" @cardAnimation>
-        <i class="fa fa-arrow-left arrow"></i>
-    </button>
-    
-    <div class="cards" #cardsContainer *ngIf="showCards">
-        <div class="card" *ngFor="let project of projects; trackBy: trackProject" [@cardAnimation]="showCards ? 'visible' : 'hidden'">
-            <header>
-                <h3>{{project.title}}</h3>
-            </header>
-            <div class="image-container">
-                <img [src]="project.image" [alt]="'Imagem Principal do Projeto ' + project.title">
-            </div>
-            <div class="technologys-container">
-                <div class="technologys-content">
-                    @for (tech of project.technologies; track tech) {
-                        <p class="technology">{{tech}}</p>
-                    }
+<section id="projects" #projectsSection [@fadeSlideUp]="showCards ? 'visible' : 'hidden'" class="project-cards">
+    <h2 [@fadeSlideUp]="showCards ? 'visible' : 'hidden'">Projetos</h2>
+    <div class="content" [@fadeSlideUp]="showCards ? 'visible' : 'hidden'">
+        <button (click)="scrollLeft()" [disabled]="atStart" *ngIf="showCards" @fadeSlideUp>
+            <i class="fa fa-arrow-left arrow"></i>
+        </button>
+        
+        <div class="cards" #cardsContainer *ngIf="showCards">
+            <div class="card" *ngFor="let project of projects; trackBy: trackProject" [@fadeSlideUp]="showCards ? 'visible' : 'hidden'">
+                <header>
+                    <h3>{{project.title}}</h3>
+                </header>
+                <div class="image-container">
+                    <img [src]="project.image" [alt]="'Imagem Principal do Projeto ' + project.title">
+                </div>
+                <div class="technologys-container">
+                    <div class="technologys-content">
+                        @for (tech of project.technologies; track tech) {
+                            <p class="technology">{{tech}}</p>
+                        }
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a class="btn" (click)="openProjectDetails(project)">
+                        <i class="fa-solid fa-plus"></i>
+                        Detalhes
+                    </a>
+                    <a [href]="project.accessUrl" class="btn">
+                        <i class="fa-solid fa-link"></i>
+                        Acessar
+                    </a>
                 </div>
             </div>
-            <div class="buttons">
-                <a class="btn" (click)="openProjectDetails(project)">
-                    <i class="fa-solid fa-plus"></i>
-                    Detalhes
-                </a>
-                <a [href]="project.accessUrl" class="btn">
-                    <i class="fa-solid fa-link"></i>
-                    Acessar
-                </a>
-            </div>
         </div>
+        <button (click)="scrollRight()" [disabled]="atEnd" *ngIf="showCards" @fadeSlideUp>
+            <i class="fa fa-arrow-right arrow"></i>
+        </button>
     </div>
-
-    <button (click)="scrollRight()" [disabled]="atEnd" *ngIf="showCards" @cardAnimation>
-        <i class="fa fa-arrow-right arrow"></i>
-    </button>
 </section>
 
 @if (selectedProject) {
-  <div class="modal-projects" @modalAnimation>
+  <div class="modal-projects" @fadeInZoomUp>
     <app-project-details
       [project]="selectedProject"
       (close)="closeProjectDetails()">

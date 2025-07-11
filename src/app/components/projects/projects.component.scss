@@ -1,127 +1,131 @@
 @use '../../../styles/variables.scss' as var;
 
 :host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: 700px;
-    margin-bottom: 80px;
+    margin: 150px 0;
 
-    h2 {
-        margin-bottom: 40px;
-        font-size: 50px;
-        background: var.$gradient_main;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-text-fill-color: transparent;
-    }
-    
     .project-cards {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        min-height: 700px;
         gap: 30px;
 
-        button {
-            padding: 10px 11px;
-            border-radius: 50%;
-            background-color: var.$color_blue;
-            transition: 0.5s;
-
-            .arrow {
-                font-size: 15px;
-            }
-        }
-
-        button:hover {
-            background-color: var.$color_blue_medium;
-        }
-
-        button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        .cards {
-            display: flex;
-            gap: 50px;
-            max-width: 1000px;
-            overflow: hidden;
+        h2 {
+            margin-bottom: 40px;
+            font-size: 50px;
+            background: var.$gradient_main;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
         }
         
-        .card, header, .image-container, img, .technologys-container, .buttons {
-            width: 300px;
-        }
-    
-        header {
-            background: var.$gradient_main;
-            padding: 25px;
-            font-size: 20px;
-            border-radius: 30px 30px 0 0;
-        }
-
-        .image-container {
-            height: 300px;
-            background: var.$color_card_background;
-
-            img {
-                height: 100%;
-            }
-        }
-
-        .technologys-container {
+        .content {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: var.$color_card_background;
-            padding: 30px;
+            gap: 30px;
 
-            .technologys-content {
+            button {
+                padding: 10px 11px;
+                border-radius: 50%;
+                background-color: var.$color_blue;
+                transition: 0.5s;
+
+                .arrow {
+                    font-size: 15px;
+                }
+            }
+
+            button:hover {
+                background-color: var.$color_blue_medium;
+            }
+
+            button:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+
+            .cards {
+                display: flex;
+                gap: 50px;
+                max-width: 1000px;
+                overflow: hidden;
+            }
+            
+            .card, header, .image-container, img, .technologys-container, .buttons {
+                width: 300px;
+            }
+        
+            header {
+                background: var.$gradient_main;
+                padding: 25px;
+                font-size: 20px;
+                border-radius: 30px 30px 0 0;
+            }
+
+            .image-container {
+                height: 300px;
+                background: var.$color_card_background;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .technologys-container {
                 display: flex;
                 justify-content: center;
-                flex-wrap: wrap;
-                gap: 15px;
-    
-                .technology {
-                    background: var.$color_blue;
-                    text-align: center;
-                    cursor: default;
-                    padding: 5px 15px;
-                    border-radius: 30px;
-                    white-space: nowrap;
+                align-items: center;
+                background: var.$color_card_background;
+                padding: 30px;
+
+                .technologys-content {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 15px;
+        
+                    .technology {
+                        background: var.$color_blue;
+                        text-align: center;
+                        cursor: default;
+                        padding: 5px 15px;
+                        border-radius: 30px;
+                        white-space: nowrap;
+                        transition: 0.5s;
+                    }
+
+                    .technology:hover {
+                        background: var.$color_footer_strong;
+                    }
+                }
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                width: 100%;
+                padding-bottom: 30px;
+                background: var.$color_card_background;
+                border-radius: 0 0 30px 30px;
+
+                .btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    padding: 15px;
+                    background: var.$gradient_main;
+                    border-radius: 20px;
                     transition: 0.5s;
                 }
 
-                .technology:hover {
-                    background: var.$color_footer_strong;
+                .btn:hover {
+                    transform: scale(1.1);
                 }
-            }
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-            padding-bottom: 30px;
-            background: var.$color_card_background;
-            border-radius: 0 0 30px 30px;
-
-            .btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;
-                padding: 15px;
-                background: var.$gradient_main;
-                border-radius: 20px;
-                transition: 0.5s;
-            }
-
-            .btn:hover {
-                transform: scale(1.1);
             }
         }
     }

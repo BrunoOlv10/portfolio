@@ -21,6 +21,10 @@ body {
     padding-top: 50px;
 }
 
+section[id] {
+  scroll-margin-top: 250px;
+}
+
 button, a {
     cursor: pointer;
 }

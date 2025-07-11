@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
-import { Project, ProjectDetails, ProjectScreen } from '../../models/project.model';
+import { Project, ProjectDetails, ProjectScreen } from '../../shared/models/project.model';
 
 @Component({
   selector: 'app-project-details',
