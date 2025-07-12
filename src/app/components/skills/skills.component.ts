@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { SKILLS_ICONS } from '../../shared/constants/skills-icons';
 
 @Component({
   selector: 'app-skills',
@@ -7,18 +8,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  icons: string[] = [
-    'devicon-html5-plain colored',
-    'devicon-css3-plain colored',
-    'devicon-angularjs-plain colored',
-    'devicon-javascript-plain colored',
-    'devicon-typescript-plain colored',
-    'devicon-csharp-plain colored',
-    'devicon-python-plain colored',
-    'devicon-microsoftsqlserver-plain colored',
-    'devicon-mysql-plain colored',
-    'devicon-jasmine-original colored'
-  ];
+  icons = SKILLS_ICONS;
 
   repeatCount = 1;
 

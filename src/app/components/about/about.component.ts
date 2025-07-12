@@ -14,13 +14,35 @@ export class AboutComponent {
 
   showElements = false;
 
+  observer!: IntersectionObserver;
+
+  lastScrollTop = 0;
+  isScrollingDown = false;
+
+  ngOnInit() {
+    window.addEventListener('scroll', this.handleScroll, true);
+  }
+
   ngAfterViewInit() {
-    const observer = new IntersectionObserver((entries) => {
+    this.observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      this.showElements = entry.isIntersecting;
+
+      if (entry.isIntersecting && this.isScrollingDown) {
+        this.showElements = true;
+      }
+
+      if (!entry.isIntersecting && !this.isScrollingDown) {
+        this.showElements = false;
+      }
     });
 
-    observer.observe(this.aboutSection.nativeElement);
+    this.observer.observe(this.aboutSection.nativeElement);
+  }
+
+  handleScroll = () => {
+    const scrollTop = window.scrollY;
+    this.isScrollingDown = scrollTop > this.lastScrollTop;
+    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
   copyEmail(event: MouseEvent): void {

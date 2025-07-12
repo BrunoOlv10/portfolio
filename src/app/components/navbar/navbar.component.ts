@@ -9,15 +9,21 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
-
     if (!element) return;
 
-    const offset = -350;
+    const nav = document.querySelector('app-navbar nav');
+    const navbarHeight = (nav as HTMLElement)?.offsetHeight || 0;
 
-    const y = element.getBoundingClientRect().top + window.scrollY + offset;
+    const rect = element.getBoundingClientRect();
+
+    const needAnimation = rect.top > window.innerHeight;
+
+    const dynamicOffset = needAnimation ? 300 : 50;
+
+    const elementTop = element.getBoundingClientRect().top + window.scrollY;
 
     window.scrollTo({
-      top: y,
+      top: elementTop - navbarHeight - dynamicOffset,
       behavior: 'smooth'
     });
   }

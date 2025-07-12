@@ -3,6 +3,7 @@ import { ProjectDetailsComponent } from '../project-details/project-details.comp
 import { Project } from '../../shared/models/project.model';
 import { CommonModule } from '@angular/common';
 import { fadeSlideUp, fadeInZoomUp } from '../../shared/animations/animations';
+import { PROJECTS } from '../../shared/constants/projects.data';
 
 @Component({
   selector: 'app-projects',
@@ -21,51 +22,38 @@ export class ProjectsComponent {
   selectedProject: Project | null = null;
 
   showCards = false;
+
+  observer!: IntersectionObserver;
+
+  lastScrollTop = 0;
+  isScrollingDown = false;
+
+  projects: Project[] = PROJECTS;
    
-  projects: Project[] = [
-    {
-      title: 'Exemplo 1',
-      image: 'assets/projects/furia/tela-infos.png',
-      technologies: ['Angular', 'TypeScript', 'C#', 'SQL Server'],
-      accessUrl: '#'
-    },
-    {
-      title: 'Exemplo 2',
-      image: 'assets/projects/furia/tela-infos.png',
-      technologies: ['React', 'JavaScript', 'Python', 'MySQL'],
-      accessUrl: '#'
-    },
-    {
-      title: 'Exemplo 3',
-      image: 'assets/projects/furia/tela-infos.png',
-      technologies: ['Vue', 'TypeScript', 'Java'],
-      accessUrl: '#'
-    },
-    {
-      title: 'Exemplo 4',
-      image: 'assets/projects/furia/tela-infos.png',
-      technologies: ['Angular', 'JavaScript', 'C#', 'MySQL'],
-      accessUrl: '#'
-    },
-    {
-      title: 'Exemplo 5',
-      image: 'assets/projects/furia/tela-infos.png',
-      technologies: ['Angular', 'JavaScript', 'C#', 'MySQL'],
-      accessUrl: '#'
-    },
-  ];
+  ngOnInit() {
+    window.addEventListener('scroll', this.handleScroll, true);
+  }
 
   ngAfterViewInit() {
-    const observer = new IntersectionObserver((entries) => {
+    this.observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      this.showCards = entry.isIntersecting;
 
-      if (entry.isIntersecting) {
-        setTimeout(() => this.checkScroll(), 0);
+      if (entry.isIntersecting && this.isScrollingDown) {
+        this.showCards = true;
+      }
+
+      if (!entry.isIntersecting && !this.isScrollingDown) {
+        this.showCards = false;
       }
     });
 
-    observer.observe(this.projectsSection.nativeElement);
+    this.observer.observe(this.projectsSection.nativeElement);
+  }
+
+  handleScroll = () => {
+    const scrollTop = window.scrollY;
+    this.isScrollingDown = scrollTop > this.lastScrollTop;
+    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
   trackProject(index: number, project: Project): string {

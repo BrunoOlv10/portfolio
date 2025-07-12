@@ -10,7 +10,7 @@ export const fadeSlideUp = trigger('fadeSlideUp', [
     transform: 'translateY(0)',
   })),
   transition('hidden => visible', animate('1000ms ease-out')),
-  transition('visible => hidden', animate('500ms ease-in'))
+  transition('visible => hidden', animate('1000ms ease-in'))
 ]);
 
 export const fadeInZoomUp = trigger('fadeInZoomUp', [

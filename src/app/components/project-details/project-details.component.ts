@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { Project, ProjectDetails, ProjectScreen } from '../../shared/models/project.model';
+import { PROJECT_DETAILS } from '../../shared/constants/project-details.data';
 
 @Component({
   selector: 'app-project-details',
@@ -11,100 +12,15 @@ export class ProjectDetailsComponent {
   @Input() project!: Project;
   @Output() close = new EventEmitter<void>();
 
+  @ViewChild('cardsContainer', { static: true }) cardsContainer!: ElementRef<HTMLDivElement>;
+
   currentProject!: ProjectDetails;
   selectedScreen!: ProjectScreen;
 
-  @ViewChild('cardsContainer', { static: true }) cardsContainer!: ElementRef<HTMLDivElement>;
   atStart = true;
   atEnd = false;
 
-  projectDatas = [
-    {
-      title: 'Exemplo 1',
-      accessUrl: '#',
-      codeUrl: '#',
-      screens: [
-        {
-          title: 'Login',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Tela de login com autenticação...'
-        },
-        {
-          title: 'Home',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Página inicial com chat...'
-        },
-      ]
-    },
-    {
-      title: 'Exemplo 2',
-      accessUrl: '#',
-      codeUrl: '#',
-      screens: [
-        {
-          title: 'Login',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Tela de login com autenticação...'
-        },
-        {
-          title: 'Home',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Página inicial com chat...'
-        },
-      ]
-    },
-    {
-      title: 'Exemplo 3',
-      accessUrl: '#',
-      codeUrl: '#',
-      screens: [
-        {
-          title: 'Login',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Tela de login com autenticação...'
-        },
-        {
-          title: 'Home',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Página inicial com chat...'
-        },
-      ]
-    },
-    {
-      title: 'Exemplo 4',
-      accessUrl: '#',
-      codeUrl: '#',
-      screens: [
-        {
-          title: 'Login',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Tela de login com autenticação...'
-        },
-        {
-          title: 'Home',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Página inicial com chat...'
-        },
-      ]
-    },
-    {
-      title: 'Exemplo 5',
-      accessUrl: '#',
-      codeUrl: '#',
-      screens: [
-        {
-          title: 'Login',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Tela de login com autenticação...'
-        },
-        {
-          title: 'Home',
-          image: 'assets/projects/furia/tela-infos.png',
-          description: 'Página inicial com chat...'
-        },
-      ]
-    },
-  ];
+  projectDatas = PROJECT_DETAILS;
 
   ngAfterViewInit(): void {
     setTimeout(() => {
