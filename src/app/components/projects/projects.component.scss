@@ -10,16 +10,6 @@
         align-items: center;
         min-height: 700px;
         gap: 30px;
-
-        h2 {
-            margin-bottom: 40px;
-            font-size: 50px;
-            background: var.$gradient_main;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-        }
         
         .content {
             display: flex;

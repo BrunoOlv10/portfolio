@@ -25,6 +25,16 @@ section[id] {
   scroll-margin-top: 250px;
 }
 
+h2 {
+    background: var.$gradient_main;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
 button, a {
     cursor: pointer;
 }

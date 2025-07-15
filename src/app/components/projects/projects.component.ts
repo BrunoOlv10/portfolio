@@ -3,7 +3,7 @@ import { ProjectDetailsComponent } from '../project-details/project-details.comp
 import { Project } from '../../shared/models/project.model';
 import { CommonModule } from '@angular/common';
 import { fadeSlideUp, fadeInZoomUp } from '../../shared/animations/animations';
-import { PROJECTS } from '../../shared/constants/projects.data';
+import { PROJECTS } from '../../shared/constants/projects-data';
 
 @Component({
   selector: 'app-projects',

@@ -22,3 +22,13 @@ export const fadeInZoomUp = trigger('fadeInZoomUp', [
     animate('300ms ease-in', style({ opacity: 0, transform: 'scale(0.9) translateY(20px)' }))
   ])
 ]);
+
+export const expandCollapse = trigger('expandCollapse', [
+  transition(':enter', [
+    style({ height: 0, opacity: 0, paddingTop: 0, paddingBottom: 0 }),
+    animate('300ms ease', style({ height: '*', opacity: 1, paddingTop: '*', paddingBottom: '*' }))
+  ]),
+  transition(':leave', [
+    animate('300ms ease', style({ height: 0, opacity: 0, paddingTop: 0, paddingBottom: 0 }))
+  ])
+]);
