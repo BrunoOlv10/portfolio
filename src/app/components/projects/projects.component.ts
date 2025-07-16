@@ -3,7 +3,7 @@ import { ProjectDetailsComponent } from '../project-details/project-details.comp
 import { Project } from '../../shared/models/project.model';
 import { CommonModule } from '@angular/common';
 import { fadeSlideUp, fadeInZoomUp } from '../../shared/animations/animations';
-import { PROJECTS } from '../../shared/constants/projects-data';
+import { PROJECTS } from '../../shared/constants/projects.data';
 
 @Component({
   selector: 'app-projects',
@@ -24,6 +24,8 @@ export class ProjectsComponent {
   showCards = false;
 
   observer!: IntersectionObserver;
+
+  initialCheck = false;
 
   lastScrollTop = 0;
   isScrollingDown = false;
@@ -48,6 +50,10 @@ export class ProjectsComponent {
     });
 
     this.observer.observe(this.projectsSection.nativeElement);
+
+    this.initialCheck = true;
+    this.observer.takeRecords();
+    this.initialCheck = false;
   }
 
   handleScroll = () => {

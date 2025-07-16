@@ -1,5 +1,5 @@
 <header>
-    <h2>{{project.title}}</h2>
+    <h3>{{project.title}}</h3>
     <div class="close-button-container">
         <button (click)="onClose()"><i class="fa-solid fa-xmark"></i></button>
     </div>
@@ -31,11 +31,11 @@
     </div>
 
     <div class="buttons">
-        <a [href]="currentProject.accessUrl" class="btn">
+        <a [href]="currentProject.accessUrl" class="btn-project">
             <i class="fa-solid fa-link"></i>
             Acessar
         </a>
-        <a [href]="currentProject.codeUrl" class="btn">
+        <a [href]="currentProject.codeUrl" class="btn-project">
             <i class="fa-brands fa-github"></i>
             Código
         </a>

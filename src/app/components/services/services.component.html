@@ -1,1 +1,16 @@
-<p>services works!</p>
+<section id="services" #serviceSection [@fadeSlideUp]="showElements ? 'visible' : 'hidden'">
+    <h2>Serviços</h2>
+    <div class="services-container">
+        @for(service of services; track service) {
+            <div class="service">
+                <div class="service-header">
+                    <p>{{service.title}}</p>
+                </div>
+                <div class="service-description">
+                    <p>{{service.description}}</p>
+                </div>
+            </div>
+        }
+        </div>
+        <a (click)="scrollToSection('about')" class="btn">Contatar</a>
+</section>

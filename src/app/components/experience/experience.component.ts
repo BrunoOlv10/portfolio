@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { fadeSlideUp, expandCollapse } from '../../shared/animations/animations';
-import { EXPERIENCES } from '../../shared/constants/experience-data';
+import { EXPERIENCES } from '../../shared/constants/experience.data';
 import { Experience } from '../../shared/models/experience.model';
 
 @Component({
@@ -16,6 +16,8 @@ export class ExperienceComponent {
   showElements = false;
 
   observer!: IntersectionObserver;
+
+  initialCheck = false;
 
   lastScrollTop = 0;
   isScrollingDown = false;
@@ -42,6 +44,10 @@ export class ExperienceComponent {
     });
 
     this.observer.observe(this.experienceSection.nativeElement);
+
+    this.initialCheck = true;
+    this.observer.takeRecords();
+    this.initialCheck = false;
   }
 
   handleScroll = () => {

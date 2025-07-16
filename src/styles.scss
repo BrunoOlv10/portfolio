@@ -38,3 +38,30 @@ h2 {
 button, a {
     cursor: pointer;
 }
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 50px;
+    background: var.$gradient_main;
+    border-radius: 20px;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.btn-project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: var.$gradient_main;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.btn:hover, .btn-project:hover {
+    transform: scale(1.1);
+}

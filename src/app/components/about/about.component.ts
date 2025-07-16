@@ -16,6 +16,8 @@ export class AboutComponent {
 
   observer!: IntersectionObserver;
 
+  initialCheck = false;
+
   lastScrollTop = 0;
   isScrollingDown = false;
 
@@ -37,6 +39,10 @@ export class AboutComponent {
     });
 
     this.observer.observe(this.aboutSection.nativeElement);
+
+    this.initialCheck = true;
+    this.observer.takeRecords();
+    this.initialCheck = false;
   }
 
   handleScroll = () => {

@@ -7,9 +7,9 @@
         
         <div class="cards" #cardsContainer *ngIf="showCards">
             <div class="card" *ngFor="let project of projects; trackBy: trackProject" [@fadeSlideUp]="showCards ? 'visible' : 'hidden'">
-                <header>
+                <div class="header">
                     <h3>{{project.title}}</h3>
-                </header>
+                </div>
                 <div class="image-container">
                     <img [src]="project.image" [alt]="'Imagem Principal do Projeto ' + project.title">
                 </div>
@@ -21,11 +21,11 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a class="btn" (click)="openProjectDetails(project)">
+                    <a class="btn-project" (click)="openProjectDetails(project)">
                         <i class="fa-solid fa-plus"></i>
                         Detalhes
                     </a>
-                    <a [href]="project.accessUrl" class="btn">
+                    <a [href]="project.accessUrl" class="btn-project">
                         <i class="fa-solid fa-link"></i>
                         Acessar
                     </a>

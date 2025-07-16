@@ -47,7 +47,7 @@ export class HomeComponent {
 
     if (!element) return;
 
-    const offset = -350;
+    const offset = -400;
 
     const y = element.getBoundingClientRect().top + window.scrollY + offset;
 

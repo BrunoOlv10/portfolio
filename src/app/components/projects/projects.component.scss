@@ -48,7 +48,7 @@
                 width: 300px;
             }
         
-            header {
+            .header {
                 background: var.$gradient_main;
                 padding: 25px;
                 font-size: 20px;
@@ -101,21 +101,6 @@
                 padding-bottom: 30px;
                 background: var.$color_card_background;
                 border-radius: 0 0 30px 30px;
-
-                .btn {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 10px;
-                    padding: 15px;
-                    background: var.$gradient_main;
-                    border-radius: 20px;
-                    transition: 0.5s;
-                }
-
-                .btn:hover {
-                    transform: scale(1.1);
-                }
             }
         }
     }
