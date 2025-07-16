@@ -16,4 +16,33 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   title = 'portfolio';
+
+  ngOnInit() {
+    window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+    });
+  }
+
+  ngAfterViewInit() {
+    window.onload = () => {
+      const scrollPosition = sessionStorage.getItem('scrollPosition');
+
+      if (scrollPosition) {
+        const position = parseInt(scrollPosition, 10);
+
+        window.scrollTo(0, 0);
+
+        setTimeout(() => {
+          this.scrollToSection(position);
+        }, 800);
+      }
+    };
+  }
+
+  scrollToSection(position: number) {
+    window.scrollTo({
+      top: position,
+      behavior: 'smooth',
+    });
+  }
 }
