@@ -56,7 +56,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 20px;
             
             img {
                 width: 225px;
@@ -68,7 +68,58 @@
     
             .buttons {
                 display: flex;
-                gap: 50px;
+                gap: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        section {
+            width: 100%;
+            margin-top: 80px;
+
+            h1 {
+                font-size: 30px;
+                width: 300px;
+                margin-bottom: 30px;
+            }
+
+            .content {
+                flex-direction: column;
+            }
+
+            .photos-button {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+
+            .name-area {
+                order: 3;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-top: -200px;
+
+                .name {
+                    font-size: 25px !important;
+                }
+
+                .area {
+                    font-size: 15px !important;
+                    width: 190px !important;
+                }
+            }
+
+            .photos-button .buttons {
+                order: 4;
+                margin-top: 150px;
             }
         }
     }

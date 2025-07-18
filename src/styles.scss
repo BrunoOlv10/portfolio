@@ -43,7 +43,7 @@ button, a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 140px;
+    width: 120px;
     height: 50px;
     background: var.$gradient_main;
     border-radius: 20px;
@@ -66,4 +66,12 @@ button, a {
 
 .btn:hover, .btn-project:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .btn {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+    }
 }

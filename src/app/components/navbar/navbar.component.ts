@@ -18,7 +18,7 @@ export class NavbarComponent {
 
     const needAnimation = rect.top > window.innerHeight;
 
-    const dynamicOffset = needAnimation ? 300 : 150;
+    const dynamicOffset = needAnimation ? 100 : 150;
 
     const elementTop = element.getBoundingClientRect().top + window.scrollY;
 

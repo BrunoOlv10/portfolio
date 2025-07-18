@@ -23,6 +23,14 @@
             li {
                 a {
                     transition: 0.5s;
+
+                    span {
+                        color: var.$color_primary_text;
+                    }
+
+                    span:hover {
+                        color: var.$color_secondary_text;
+                    }
                 }
     
                 a:hover {

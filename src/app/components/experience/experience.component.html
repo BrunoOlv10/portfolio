@@ -4,14 +4,14 @@
         @for (experience of experiences; track experience) {
             <div class="experience">
                 <div class="experience-resume" [class.open-resume]="isOpen($index)">
-                    <div class="experience-year" [class.open-year]="isOpen($index)">
+                    <!-- <div class="experience-year" [class.open-year]="isOpen($index)">
                         <p><span>{{experience.year}}</span></p>
-                    </div>
+                    </div> -->
                     <div class="experience-datas-icon">
                         <div class="experience-datas">
                             <p class="role">{{experience.role}}</p>
                             <p>{{experience.company}}</p>
-                            <p>{{experience.durationText}} - <span>{{experience.durationQuantity}}</span></p>
+                            <!-- <p>{{experience.durationText}} - <span>{{experience.durationQuantity}}</span></p> -->
                         </div>
                         <div class="button-control" (click)="toggleDescription($index)">
                             @if(!isOpen($index)) {

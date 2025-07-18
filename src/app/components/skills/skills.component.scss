@@ -46,3 +46,13 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    :host {
+        margin: 205px 0 150px 0;
+
+        .icon-container {
+            
+        }
+    }
+}
