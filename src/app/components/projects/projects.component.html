@@ -1,12 +1,11 @@
-<section id="projects" #projectsSection [@fadeSlideUp]="showCards ? 'visible' : 'hidden'" class="project-cards">
-    <h2 [@fadeSlideUp]="showCards ? 'visible' : 'hidden'">Projetos</h2>
-    <div class="content" [@fadeSlideUp]="showCards ? 'visible' : 'hidden'">
-        <button (click)="scrollLeft()" [disabled]="atStart" *ngIf="showCards" @fadeSlideUp>
+<section id="projects" #projectsSection [@fadeSlideUp]="showElements ? 'visible' : 'static'" class="project-cards">
+    <h2>Projetos</h2>
+    <div class="content">
+        <button (click)="scrollLeft()" [disabled]="atStart">
             <i class="fa fa-arrow-left arrow"></i>
         </button>
-        
-        <div class="cards" #cardsContainer *ngIf="showCards">
-            <div class="card" *ngFor="let project of projects; trackBy: trackProject" [@fadeSlideUp]="showCards ? 'visible' : 'hidden'">
+        <div class="cards" #cardsContainer>
+            <div class="card" *ngFor="let project of projects; trackBy: trackProject">
                 <div class="header">
                     <h3>{{project.title}}</h3>
                 </div>
@@ -32,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <button (click)="scrollRight()" [disabled]="atEnd" *ngIf="showCards" @fadeSlideUp>
+        <button (click)="scrollRight()" [disabled]="atEnd">
             <i class="fa fa-arrow-right arrow"></i>
         </button>
     </div>

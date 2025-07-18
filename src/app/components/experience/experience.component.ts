@@ -24,7 +24,8 @@ export class ExperienceComponent {
   
   experiences: Experience[] = EXPERIENCES;
 
-  isOpen = false;
+  // isOpen = false;
+  openedIndex: number | null = null;
 
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);
@@ -56,7 +57,11 @@ export class ExperienceComponent {
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
-  toggleDescription() {
-    this.isOpen = !this.isOpen;
+  toggleDescription(index: number) {
+    this.openedIndex = this.openedIndex === index ? null : index;
+  }
+
+  isOpen(index: number): boolean {
+    return this.openedIndex === index;
   }
 }

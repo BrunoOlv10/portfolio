@@ -1,16 +1,10 @@
 import {trigger, style, animate, transition, state} from '@angular/animations';
 
 export const fadeSlideUp = trigger('fadeSlideUp', [
-  state('hidden', style({
-    opacity: 0,
-    transform: 'translateY(250px)',
-  })),
-  state('visible', style({
-    opacity: 1,
-    transform: 'translateY(0)',
-  })),
-  transition('hidden => visible', animate('1000ms ease-out')),
-  transition('visible => hidden', animate('1000ms ease-in'))
+  transition('static => visible', [
+    style({ opacity: 0, transform: 'translateY(250px)' }),
+    animate('1000ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+  ])
 ]);
 
 export const fadeInZoomUp = trigger('fadeInZoomUp', [

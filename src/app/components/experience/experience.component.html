@@ -1,10 +1,10 @@
-<section id="experience" #experienceSection [@fadeSlideUp]="showElements ? 'visible' : 'hidden'">
+<section id="experience" #experienceSection [@fadeSlideUp]="showElements ? 'visible' : 'static'">
     <h2>Experiência Profissional</h2>
     <div class="experiences-container">
         @for (experience of experiences; track experience) {
             <div class="experience">
-                <div class="experience-resume" [class.open-resume]="isOpen">
-                    <div class="experience-year" [class.open-year]="isOpen">
+                <div class="experience-resume" [class.open-resume]="isOpen($index)">
+                    <div class="experience-year" [class.open-year]="isOpen($index)">
                         <p><span>{{experience.year}}</span></p>
                     </div>
                     <div class="experience-datas-icon">
@@ -13,18 +13,18 @@
                             <p>{{experience.company}}</p>
                             <p>{{experience.durationText}} - <span>{{experience.durationQuantity}}</span></p>
                         </div>
-                        <div class="button-control" (click)="toggleDescription()">
-                            @if(!isOpen) {
+                        <div class="button-control" (click)="toggleDescription($index)">
+                            @if(!isOpen($index)) {
                                 <i class="fa-solid fa-angle-down"></i>
                             }
     
-                            @if(isOpen) {
+                            @if(isOpen($index)) {
                                 <i class="fa-solid fa-angle-up"></i>
                             }
                         </div>
                     </div>
                 </div>
-                @if(isOpen) {
+                @if(isOpen($index)) {
                     <div class="experience-description" @expandCollapse>
                         @for (item of experience.description; track item) {
                             <p>- {{item}};</p>

@@ -21,12 +21,13 @@ export class ProjectsComponent {
   atEnd = false;
   selectedProject: Project | null = null;
 
-  showCards = false;
+  showElements = false;
 
   observer!: IntersectionObserver;
 
   initialCheck = false;
 
+  animate = false;
   lastScrollTop = 0;
   isScrollingDown = false;
 
@@ -41,11 +42,11 @@ export class ProjectsComponent {
       const entry = entries[0];
 
       if (entry.isIntersecting && this.isScrollingDown) {
-        this.showCards = true;
+        this.showElements = true;
       }
 
       if (!entry.isIntersecting && !this.isScrollingDown) {
-        this.showCards = false;
+        this.showElements = false;
       }
     });
 

@@ -7,9 +7,13 @@
     background-color: var.$color_mini_card_background;
     width: 100%;
     height: 40px;
-    margin-top: 50px;
 
     p {
         color: var.$color_secondary_text;
+        transition: 0.5s;
+    }
+
+    p:hover {
+        color: var.$color_primary_text;
     }
 }
