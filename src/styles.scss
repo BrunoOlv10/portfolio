@@ -69,6 +69,14 @@ button, a {
 }
 
 @media (max-width: 600px) {
+    * {
+        overflow-x: hidden;
+    }
+
+    body {
+        padding-top: 25px;
+    }
+
     .btn {
         width: 100px;
         height: 40px;

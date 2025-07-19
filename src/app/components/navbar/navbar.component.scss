@@ -16,8 +16,8 @@
         ul {
             display: flex;
             flex-direction: row;
-            gap: 30px;
             align-items: center;
+            gap: 30px;
             height: 100%;
     
             li {
@@ -35,6 +35,26 @@
     
                 a:hover {
                     color: var.$color_secondary_text;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    :host {
+        nav {
+            height: 40px;
+            padding: 0 20px;
+
+            ul {
+                gap: 15px;
+                height: 100%;
+
+                li {
+                    a {
+                        font-size: 12px;
+                    }
                 }
             }
         }

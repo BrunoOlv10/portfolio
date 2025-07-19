@@ -11,7 +11,7 @@
             text-align: center;
             font-weight: bold;
             color: var.$color_secondary_text;
-            margin: 0 auto 90px auto;
+            margin: 0 auto;
 
             span {
                 background: var.$gradient_main;
@@ -24,8 +24,8 @@
 
          .content {
             display: flex;
-            align-items: center;
             justify-content: space-around;
+            align-items: center;
             width: 100%;
 
             .name-area {
@@ -50,32 +50,37 @@
                     text-align: center;
                 }
             }
-        }
-    
-        .photos-button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            
-            img {
-                width: 225px;
-                height: 225px;
-                border-radius: 50%;
-                background: var.$gradient_main border-box;
-                border: 7px solid transparent;
+
+            .photo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                
+                img {
+                    width: 225px;
+                    height: 225px;
+                    border-radius: 50%;
+                    background: var.$gradient_main border-box;
+                    border: 7px solid transparent;
+                }
             }
-    
+
             .buttons {
                 display: flex;
+                justify-content: center;
                 gap: 30px;
+                margin-top: 350px;
+                margin-left: -550px;
             }
         }
+    
     }
+}
 
-    @media (max-width: 600px) {
+@media (max-width: 600px) {
+    :host {
         section {
-            width: 100%;
             margin-top: 80px;
 
             h1 {
@@ -88,24 +93,23 @@
                 flex-direction: column;
             }
 
-            .photos-button {
-                order: 2;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .photo {
+                order: 1;
+                margin-bottom: 20px;
 
                 img {
-                    width: 120px;
-                    height: 120px;
+                    width: 150px !important;
+                    height: 150px !important;
                 }
             }
 
             .name-area {
-                order: 3;
+                order: 2;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                margin-top: -200px;
+                gap: 5px;
+                margin-bottom: 25px;
 
                 .name {
                     font-size: 25px !important;
@@ -117,9 +121,13 @@
                 }
             }
 
-            .photos-button .buttons {
-                order: 4;
-                margin-top: 150px;
+            .buttons {
+                order: 3;
+                row-gap: 20px !important;
+                flex-wrap: wrap;
+                width: 230px;
+                margin-top: 0px !important;
+                margin-left: 0px !important;
             }
         }
     }

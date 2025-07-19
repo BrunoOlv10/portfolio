@@ -6,7 +6,7 @@
     width: 100%;
     background: var.$color_skills_background;
     padding: 10px 0;
-    margin: 125px 0 150px 0;
+    margin: 120px 0 150px 0;
     
     .icon-container {
         overflow: hidden;
@@ -49,10 +49,16 @@
 
 @media (max-width: 600px) {
     :host {
-        margin: 205px 0 150px 0;
+        margin: 30px 0 100px 0;
 
         .icon-container {
-            
+            padding: 0;
+
+            .icon-content {
+                i {
+                    font-size: 15px;
+                }
+            }
         }
     }
 }
