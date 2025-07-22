@@ -81,53 +81,51 @@
 @media (max-width: 600px) {
     :host {
         section {
-            margin-top: 80px;
+            margin-top: 70px;
 
             h1 {
-                font-size: 30px;
-                width: 300px;
+                font-size: 40px;
+                width: 315px;
                 margin-bottom: 30px;
             }
 
             .content {
                 flex-direction: column;
-            }
 
-            .photo {
-                order: 1;
-                margin-bottom: 20px;
+                .name-area {
+                    order: 2;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 5px;
+                    margin-bottom: 25px;
 
-                img {
-                    width: 150px !important;
-                    height: 150px !important;
-                }
-            }
+                    .name {
+                        font-size: 25px;
+                    }
 
-            .name-area {
-                order: 2;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                gap: 5px;
-                margin-bottom: 25px;
-
-                .name {
-                    font-size: 25px !important;
+                    .area {
+                        font-size: 15px;
+                        width: 190px;
+                    }
                 }
 
-                .area {
-                    font-size: 15px !important;
-                    width: 190px !important;
+                .photo {
+                    order: 1;
+                    margin-bottom: 20px;
+    
+                    img {
+                        width: 150px;
+                        height: 150px;
+                    }
                 }
-            }
 
-            .buttons {
-                order: 3;
-                row-gap: 20px !important;
-                flex-wrap: wrap;
-                width: 230px;
-                margin-top: 0px !important;
-                margin-left: 0px !important;
+                .buttons {
+                    order: 3;
+                    gap: 15px;
+                    margin-top: 0px;
+                    margin-left: 0px;
+                }
             }
         }
     }

@@ -8,7 +8,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 700px;
         gap: 30px;
         
         .content {
@@ -63,6 +62,7 @@
                 background: var.$color_card_background;
 
                 img {
+                    display: block;
                     height: 100%;
                 }
             }
@@ -118,5 +118,65 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
+    }
+}
+
+@media (max-width: 600px) {
+    :host {
+        overflow-y: hidden;
+
+        .project-cards {
+            gap: 25px;
+
+            .content {
+                gap: 15px;
+
+                .cards {
+                    width: 220px;
+
+                    .card, header, .image-container, img, .technologys-container, .buttons {
+                        width: 220px;
+                    }
+
+                    .card {
+                        flex: 0 0 auto;
+                    }
+                    
+                    .header {
+                        display: flex;
+                        justify-content: center;
+                        padding: 20px;
+
+                        h3 {
+                            font-size: 20px;
+                        }
+                    }
+            
+                    .image-container {
+                        height: 205px;
+                    }
+
+                    .technologys-container {
+                        padding: 20px 0;
+
+                        .technologys-content {
+                            row-gap: 10px;
+
+                            .technology {
+                                font-size: 10px;
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
+
+                    .buttons {
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 15px;
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
     }
 }
