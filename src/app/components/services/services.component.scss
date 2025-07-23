@@ -47,3 +47,42 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    :host {
+        margin-bottom: 100px;
+
+        section {
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            .services-container {
+                gap: 25px;
+                width: 200px;
+                margin-bottom: 25px;
+
+                .service {
+                    width: 200px;
+
+                    .service-header {
+                        padding: 15px;
+
+                        p {
+                            font-size: 15px;
+                            text-align: center;
+                        }
+                    }
+
+                    .service-description {
+                        padding: 15px 20px;
+
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

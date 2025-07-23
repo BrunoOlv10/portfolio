@@ -162,6 +162,8 @@
 
 @media (max-width: 600px) {
     :host {
+        margin-bottom: 100px;
+
         section {
             display: flex;
             flex-direction: column;

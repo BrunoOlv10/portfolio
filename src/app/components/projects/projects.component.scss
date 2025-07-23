@@ -124,6 +124,7 @@
 @media (max-width: 600px) {
     :host {
         margin-bottom: 100px;
+        overflow-y: hidden;
 
         .project-cards {
             gap: 25px;
