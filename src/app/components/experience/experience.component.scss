@@ -94,3 +94,38 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    :host {
+        section {
+            h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .experiences-container {
+                .experience {
+                    width: 250px;
+
+                    .experience-resume {
+                        .experience-datas-icon {
+                            .experience-datas {
+                                .role, .company {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+
+                    .experience-description {
+                        padding: 15px 20px;
+
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

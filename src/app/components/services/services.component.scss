@@ -51,6 +51,7 @@
 @media (max-width: 600px) {
     :host {
         margin-bottom: 100px;
+        overflow-y: hidden;
 
         section {
             h2 {
@@ -78,7 +79,7 @@
                         padding: 15px 20px;
 
                         p {
-                            font-size: 14px;
+                            font-size: 12px;
                         }
                     }
                 }

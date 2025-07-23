@@ -17,3 +17,11 @@
         color: var.$color_primary_text;
     }
 }
+
+@media (max-width: 600px) {
+    :host {
+        p {
+            font-size: 12px;
+        }
+    }
+}
