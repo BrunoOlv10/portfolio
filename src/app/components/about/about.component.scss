@@ -5,143 +5,224 @@
 
     section {
         display: flex;
-        justify-content: space-around;
-        gap: 100px;
+        flex-direction: column;
+        align-items: end;
         max-width: 1200px;
         padding: 0 100px;
 
-        .about-resume {
+        h2 {
+            transform: translateX(-50%);
+        }
+
+        .content {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-width: max-content;
+            justify-content: space-around;
+            gap: 100px;
 
-            img {
-                width: 225px;
-                height: 225px;
-                border-radius: 50%;
-                background: var.$gradient_main border-box;
-                border: 7px solid transparent;
-            }
-
-            .name-role {
+            .about-resume {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                font-weight: 500;
-                margin: 20px 0 30px 0;
-
-                .name {
-                    font-size: 50px;
-                    margin-bottom: 10px;
+                justify-content: center;
+                min-width: max-content;
+    
+                img {
+                    width: 225px;
+                    height: 225px;
+                    border-radius: 50%;
+                    background: var.$gradient_main border-box;
+                    border: 7px solid transparent;
                 }
     
-                .role {
-                    width: 350px;
-                    font-size: 30px;
-                    color: var.$color_secondary_text;
+                .name-role {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-weight: 500;
+                    margin: 20px 0 30px 0;
+    
+                    .name {
+                        font-size: 50px;
+                        margin-bottom: 10px;
+                    }
+        
+                    .role {
+                        width: 350px;
+                        font-size: 30px;
+                        color: var.$color_secondary_text;
+                    }
+                }
+    
+                .social-media {
+                    display: flex;
+                    gap: 30px;
+    
+                    a {
+                        i {
+                            font-size: 40px;
+                            transition: 0.5s;
+                        }
+    
+                        i:hover {
+                            color: var.$color_blue;
+                        }
+                    }
+    
+                    .email-container {
+                        position: relative;
+    
+                        .email-button {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            position: absolute;
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                            background-color: var.$color_mini_card_background;
+                            bottom: 95%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            font-size: 14px;
+                            border-radius: 5px;
+                            padding: 6px 4px 6px 10px;
+                            transition: opacity 0.5s;
+                            z-index: 1;
+    
+                            .copy-btn {
+                                background: none;
+                                border: 1px solid var.$color_primary_text;
+                                font-size: 12px;
+                                border-radius: 5px;
+                                padding: 2px 6px;
+                            }
+    
+                            .copy-btn:hover {
+                                background: var.$color_button_hover;
+                            }
+    
+                            .copied-feedback {
+                                color: var.$color_copied_feedback_text;
+                                opacity: 0;
+                                max-width: 0;
+                                font-size: 12px;
+                                overflow: hidden;
+                                transition: opacity 0.5s, max-width 0.5s;
+                            }
+                        }
+    
+                        .email-button.copied .copied-feedback {
+                            opacity: 1;
+                            max-width: 100px;
+                            padding-right: 6px;
+                        }
+                    }
+    
+                    .email-container:hover .email-button {
+                        visibility: visible;
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
                 }
             }
-
-            .social-media {
+    
+            .about-text {
                 display: flex;
-                gap: 25px;
-
-                a {
-                    i {
-                        font-size: 40px;
-                        transition: 0.5s;
-                    }
-
-                    i:hover {
-                        color: var.$color_blue;
-                    }
-                }
-
-                .email-container {
-                    position: relative;
-
-                    .email-button {
-                        display: flex;
-                        align-items: center;
-                        gap: 8px;
-                        position: absolute;
-                        visibility: hidden;
-                        opacity: 0;
-                        pointer-events: none;
-                        background-color: var.$color_mini_card_background;
-                        bottom: 95%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        font-size: 14px;
-                        border-radius: 5px;
-                        padding: 6px 4px 6px 10px;
-                        transition: opacity 0.5s;
-                        z-index: 1;
-
-                        .copy-btn {
-                            background: none;
-                            border: 1px solid var.$color_primary_text;
-                            font-size: 12px;
-                            border-radius: 5px;
-                            padding: 2px 6px;
-                        }
-
-                        .copy-btn:hover {
-                            background: var.$color_button_hover;
-                        }
-
-                        .copied-feedback {
-                            color: var.$color_copied_feedback_text;
-                            opacity: 0;
-                            max-width: 0;
-                            font-size: 12px;
-                            overflow: hidden;
-                            transition: opacity 0.5s, max-width 0.5s;
+                flex-direction: column;
+                align-items: center;
+    
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+    
+                    p {
+                        line-height: 30px;
+                        color: var.$color_secondary_text;
+                        font-weight: 500;
+    
+                        span {
+                            color: var.$color_primary_text;
                         }
                     }
-
-                    .email-button.copied .copied-feedback {
-                        opacity: 1;
-                        max-width: 100px;
-                        padding-right: 6px;
-                    }
-                }
-
-                .email-container:hover .email-button {
-                    visibility: visible;
-                    opacity: 1;
-                    pointer-events: auto;
                 }
             }
         }
 
-        .about-text {
+        .buttons {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            transform: translateX(-25%);
+            gap: 50px;
+            margin-top: 40px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    :host {
+        section {
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 25px;
+            max-width: 1200px;
+            padding: 0 100px;
 
-            .text {
+            h2 {
+                transform: none;
+            }
+
+            .content {
                 display: flex;
                 flex-direction: column;
-                gap: 30px;
+                gap: 25px;
 
-                p {
-                    line-height: 30px;
-                    color: var.$color_secondary_text;
-                    font-weight: 500;
+                .about-resume {
+                    img {
+                        width: 150px;
+                        height: 150px;
+                    }
 
-                    span {
-                        color: var.$color_primary_text;
+                    .name-role {
+                        margin: 15px 0 25px 0;
+
+                        .name {
+                            font-size: 25px;
+                            margin-bottom: 10px;
+                        }
+            
+                        .role {
+                            width: 220px;
+                            font-size: 20px;
+                            text-align: center;
+                        }
+                    }
+
+                    .social-media {
+                        a {
+                            i {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+    
+                .about-text {
+                    .text {
+                        p {
+                            font-size: 15px;
+                            text-align: center;
+                        }
                     }
                 }
             }
 
             .buttons {
-                display: flex;
-                gap: 50px;
-                margin-top: 40px;
+                transform: none;
+                margin: 0;
+                gap: 30px;
             }
         }
     }

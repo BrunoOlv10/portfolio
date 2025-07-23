@@ -109,21 +109,21 @@
     }
 
     .modal-projects {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
     }
 }
 
 @media (max-width: 600px) {
     :host {
-        overflow-y: hidden;
+        margin-bottom: 100px;
 
         .project-cards {
             gap: 25px;
@@ -157,7 +157,7 @@
                     }
 
                     .technologys-container {
-                        padding: 20px 0;
+                        padding: 20px 15px;
 
                         .technologys-content {
                             row-gap: 10px;

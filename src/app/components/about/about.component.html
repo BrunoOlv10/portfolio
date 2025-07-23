@@ -1,54 +1,53 @@
 <section id="about" #aboutSection [@fadeSlideUp]="showElements ? 'visible' : 'static'">
-    <div class="about-resume">
-        <img src="assets/images/bruno-oliveira-perfil.jpg" alt="Foto Perfil Bruno Oliveira">
-        <div class="name-role">
-            <p class="name">&lt;Bruno Oliveira /&gt;</p>
-            <p class="role">Desenvolvedor FullStack com foco em Back-End</p>
-        </div>
-        <div class="social-media">
-            <a href="https://wa.me/5511976754965" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <div class="email-container">
-                <a href="mailto:bruno.olvslv@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-                <div class="email-button">
-                    bruno.olvslv&#64;gmail.com
-                    <button class="copy-btn" (click)="copyEmail($event)">Copiar</button>
-                    <span class="copied-feedback" aria-live="polite">Copiado!</span>
-                </div>
+    <h2>Sobre Mim</h2>
+    <div class="content">
+        <div class="about-resume">
+            <img src="assets/images/bruno-oliveira-perfil.jpg" alt="Foto Perfil Bruno Oliveira">
+            <div class="name-role">
+                <p class="name">&lt;Bruno Oliveira /&gt;</p>
+                <p class="role">Desenvolvedor FullStack com foco em Back-End</p>
             </div>
-            <a href="https://www.linkedin.com/in/bruno-olv/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/BrunoOlv10" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
+            <div class="social-media">
+                <a href="https://wa.me/5511976754965" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <div class="email-container">
+                    <a href="mailto:bruno.olvslv@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <div class="email-button">
+                        bruno.olvslv&#64;gmail.com
+                        <button class="copy-btn" (click)="copyEmail($event)">Copiar</button>
+                        <span class="copied-feedback" aria-live="polite">Copiado!</span>
+                    </div>
+                </div>
+                <a href="https://www.linkedin.com/in/bruno-olv/" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/BrunoOlv10" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <div class="about-text">
+            <div class="text">
+                <p>
+                    Sou Desenvolvedor Full-Stack, com foco em <span>Back-End</span>. <span>Trabalho</span> com <span>desenvolvimento web</span>, <span>criação de sites</span>, <span>landing pages</span> e aplicações com back-end, como <span>banco de dados</span>, <span>telas de login</span> e mais. Também atuo com <span>extração</span> e <span>tratamento de dados</span>, coletando dados e entregando tudo de forma estruturada.
+                </p>
+                <p>
+                    Tenho <span>experiência</span> em tecnologias como <span>.NET, C#, SQL Server, Python, Angular e TypeScript</span>. Atuei na empresa Trieduc - Avaliação Educacional, <span>desenvolvendo novas funcionalidades</span> e realizando a <span>manutenção</span> do sistema web voltado à preparação de estudantes para vestibulares.
+                </p>
+                <p>
+                    Sou uma pessoa <span>dedicada</span> e <span>disposta a aprender</span>. Me <span>adapto</span> bem às <span>mudanças</span>, <span>gosto de resolver problemas</span> e acredito no valor do <span>trabalho em equipe</span>.
+                </p>
+                <p>
+                    <span>Me formei em 2023</span> no curso técnico de <span>Análise e Desenvolvimento de Sistemas</span> pela <span>ETEC</span> e, <span>atualmente</span>, curso a <span>graduação</span> na mesma área.
+                </p>
+            </div>
         </div>
     </div>
-    <div class="about-text">
-        <h2>Sobre Mim</h2>
-        <div class="text">
-            <p>
-                Sou Desenvolvedor Full-Stack, com foco em <span>Back-End</span>. <span>Trabalho</span> com <span>desenvolvimento web</span>, <span>criação de sites</span>, <span>landing pages</span> e aplicações com back-end, como <span>banco de dados</span>, <span>telas de login</span> e mais. Também atuo com <span>extração</span> e <span>tratamento de dados</span>, coletando dados e entregando tudo de forma estruturada.
-            </p>
-
-            <p>
-                Tenho <span>experiência</span> em tecnologias como <span>.NET, C#, SQL Server, Python, Angular e TypeScript</span>. Atuei na empresa Trieduc - Avaliação Educacional, <span>desenvolvendo novas funcionalidades</span> e realizando a <span>manutenção</span> do sistema web voltado à preparação de estudantes para vestibulares.
-            </p>
-
-            <p>
-                Sou uma pessoa <span>dedicada</span> e <span>disposta a aprender</span>. Me <span>adapto</span> bem às <span>mudanças</span>, <span>gosto de resolver problemas</span> e acredito no valor do <span>trabalho em equipe</span>.
-            </p> 
-
-            <p>
-                <span>Me formei em 2023</span> no curso técnico de <span>Análise e Desenvolvimento de Sistemas</span> pela <span>ETEC</span> e, <span>atualmente</span>, curso a <span>graduação</span> na mesma área.
-            </p>
-        </div>
-        <div class="buttons">
-            <a href="https://wa.me/5511976754965" target="_blank" class="btn">Contatar</a>
-            <a href="#" class="btn">Baixar CV</a>
-        </div>
+    <div class="buttons">
+        <a href="https://wa.me/5511976754965" target="_blank" class="btn">Contatar</a>
+        <a href="#" class="btn">Baixar CV</a>
     </div>
 </section>
