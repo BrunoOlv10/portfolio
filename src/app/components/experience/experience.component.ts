@@ -24,7 +24,6 @@ export class ExperienceComponent {
   
   experiences: Experience[] = EXPERIENCES;
 
-  // isOpen = false;
   openedIndex: number | null = null;
 
   ngOnInit() {

@@ -20,9 +20,9 @@ export const fadeInZoomUp = trigger('fadeInZoomUp', [
 export const expandCollapse = trigger('expandCollapse', [
   transition(':enter', [
     style({ height: 0, opacity: 0, paddingTop: 0, paddingBottom: 0 }),
-    animate('300ms ease', style({ height: '*', opacity: 1, paddingTop: '*', paddingBottom: '*' }))
+    animate('500ms ease', style({ height: '*', opacity: 1, paddingTop: '*', paddingBottom: '*' }))
   ]),
   transition(':leave', [
-    animate('300ms ease', style({ height: 0, opacity: 0, paddingTop: 0, paddingBottom: 0 }))
+    animate('500ms ease', style({ height: 0, opacity: 0, paddingTop: 0, paddingBottom: 0 }))
   ])
 ]);

@@ -40,8 +40,7 @@
                         justify-content: space-between;
                         align-items: center;
                         width: 100%;
-                        // padding: 10px 20px 10px 0;
-                        padding: 20px 20px;
+                        padding: 20px;
 
                         .experience-datas {
                             display: flex;
@@ -97,6 +96,8 @@
 
 @media (max-width: 600px) {
     :host {
+        overflow-y: hidden;
+
         section {
             h2 {
                 text-align: center;
@@ -109,9 +110,11 @@
 
                     .experience-resume {
                         .experience-datas-icon {
+                            padding: 15px 20px;
+
                             .experience-datas {
                                 .role, .company {
-                                    font-size: 14px;
+                                    font-size: 15px;
                                 }
                             }
                         }
@@ -119,9 +122,10 @@
 
                     .experience-description {
                         padding: 15px 20px;
-
+                        
                         p {
-                            font-size: 12px;
+                            font-size: 14px;
+                            overflow-y: hidden;
                         }
                     }
                 }

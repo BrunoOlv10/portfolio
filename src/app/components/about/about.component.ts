@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { fadeSlideUp } from '../../shared/animations/animations';
+import { expandCollapse, fadeSlideUp } from '../../shared/animations/animations';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
-  animations: [fadeSlideUp],
+  animations: [fadeSlideUp, expandCollapse],
 })
 export class AboutComponent {
   @ViewChild('aboutSection') aboutSection!: ElementRef<HTMLDivElement>;
@@ -20,6 +20,8 @@ export class AboutComponent {
 
   lastScrollTop = 0;
   isScrollingDown = false;
+
+  showFullText = false;
 
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);
@@ -66,5 +68,9 @@ export class AboutComponent {
             emailButton.classList.remove("copied");
         }, 2000);
     });
+  }
+
+  toggleText() {
+    this.showFullText = !this.showFullText;
   }
 }

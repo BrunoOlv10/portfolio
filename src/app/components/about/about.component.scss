@@ -12,6 +12,7 @@
 
         h2 {
             transform: translateX(-50%);
+            margin-bottom: 20px;
         }
 
         .content {
@@ -129,11 +130,16 @@
             .about-text {
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
-    
-                .text {
+
+                .initial-text {
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
+                    background: var.$color_card_background;
+                    border-radius: 30px;
+                    padding: 30px;
                     gap: 30px;
     
                     p {
@@ -145,17 +151,25 @@
                             color: var.$color_primary_text;
                         }
                     }
+
+                    .full-text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                    }
+
+                    .toggle-btn {
+                        width: 150px;
+                        font-size: 17px;
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    gap: 50px;
+                    margin-top: 40px;
                 }
             }
-        }
-
-        .buttons {
-            display: flex;
-            align-items: end;
-            justify-content: end;
-            transform: translateX(-25%);
-            gap: 50px;
-            margin-top: 40px;
         }
     }
 }
@@ -212,19 +226,25 @@
                 }
     
                 .about-text {
-                    .text {
+                    padding: 20px 30px;
+
+                    .initial-text {
                         p {
                             font-size: 15px;
                             text-align: center;
+                            overflow-y: hidden;
+                        }
+
+                        .toggle-btn {
+                            width: 140px;
+                            font-size: 15px;
                         }
                     }
-                }
-            }
 
-            .buttons {
-                transform: none;
-                margin: 0;
-                gap: 30px;
+                    .buttons {
+                        gap: 30px;
+                    }
+                }
             }
         }
     }

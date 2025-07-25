@@ -47,7 +47,9 @@ export class HomeComponent {
 
     if (!element) return;
 
-    const offset = -150;
+    const isMobile = window.innerWidth <= 600;
+
+    const offset = isMobile ? -100 : -150;
 
     const y = element.getBoundingClientRect().top + window.scrollY + offset;
 
