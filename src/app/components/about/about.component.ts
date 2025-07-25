@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { expandCollapse, fadeSlideUp } from '../../shared/animations/animations';
 import { CommonModule } from '@angular/common';
 
@@ -20,6 +20,8 @@ export class AboutComponent {
 
   lastScrollTop = 0;
   isScrollingDown = false;
+
+  isEmailVisible = false;
 
   showFullText = false;
 
@@ -53,6 +55,15 @@ export class AboutComponent {
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+  const target = event.target as HTMLElement;
+
+    if (!this.aboutSection?.nativeElement.querySelector('.email-container')?.contains(target)) {
+      this.isEmailVisible = false;
+    }
+  }
+
   copyEmail(event: MouseEvent): void {
     const button = event.currentTarget as HTMLButtonElement;
     const emailButton = button.closest(".email-button");
@@ -62,12 +73,19 @@ export class AboutComponent {
     const email = "bruno.olvslv@gmail.com";
 
     navigator.clipboard.writeText(email).then(() => {
-        emailButton.classList.add("copied");
+        emailButton.classList.add("copied")
 
         setTimeout(() => {
             emailButton.classList.remove("copied");
+            this.isEmailVisible = false;
         }, 2000);
+
     });
+  }
+
+  toggleEmail(event: Event) {
+    event.preventDefault();
+    this.isEmailVisible = !this.isEmailVisible;
   }
 
   toggleText() {

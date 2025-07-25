@@ -12,10 +12,10 @@
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
                 <div class="email-container">
-                    <a href="mailto:bruno.olvslv@gmail.com">
+                    <a href="mailto:bruno.olvslv@gmail.com" (click)="toggleEmail($event)">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
-                    <div class="email-button">
+                    <div class="email-button" [class.visible]="isEmailVisible">
                         bruno.olvslv&#64;gmail.com
                         <button class="copy-btn" (click)="copyEmail($event)">Copiar</button>
                         <span class="copied-feedback" aria-live="polite">Copiado!</span>

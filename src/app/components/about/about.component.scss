@@ -89,6 +89,12 @@
                             padding: 6px 4px 6px 10px;
                             transition: opacity 0.5s;
                             z-index: 1;
+
+                            &.visible {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
     
                             .copy-btn {
                                 background: none;
@@ -119,10 +125,12 @@
                         }
                     }
     
-                    .email-container:hover .email-button {
-                        visibility: visible;
-                        opacity: 1;
-                        pointer-events: auto;
+                    @media (hover: hover) and (pointer: fine) {
+                        .email-container:hover .email-button {
+                            visibility: visible;
+                            opacity: 1;
+                            pointer-events: auto;
+                        }
                     }
                 }
             }
@@ -226,8 +234,6 @@
                 }
     
                 .about-text {
-                    padding: 20px 30px;
-
                     .initial-text {
                         p {
                             font-size: 15px;
