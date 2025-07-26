@@ -49,7 +49,17 @@ export class HomeComponent {
 
     const isMobile = window.innerWidth <= 600;
 
-    const offset = isMobile ? -100 : -150;
+    const isMedium = window.innerWidth <= 1200;
+
+    let offset: number;
+
+    if (isMobile) {
+      offset = -100;
+    } else if (isMedium) {
+      offset = -120;
+    } else {
+      offset = -180;
+    }
 
     const y = element.getBoundingClientRect().top + window.scrollY + offset;
 

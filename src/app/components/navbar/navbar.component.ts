@@ -20,9 +20,17 @@ export class NavbarComponent {
 
     const isMobile = window.innerWidth <= 600;
 
-    const dynamicOffset = isMobile
-      ? (needAnimation ? 40 : 50)
-      : (needAnimation ? 100 : 150);
+    const isMedium = window.innerWidth <= 1200;
+
+    let dynamicOffset: number;
+
+    if (isMobile) {
+      dynamicOffset = needAnimation ? 40 : 50;
+    } else if (isMedium) {
+      dynamicOffset = needAnimation ? 60 : 70;
+    } else {
+      dynamicOffset = needAnimation ? 100 : 120;
+    }
 
     const elementTop = element.getBoundingClientRect().top + window.scrollY;
 
