@@ -121,6 +121,66 @@
     }
 }
 
+@media (max-width: 1200px) {
+    :host {
+        margin-bottom: 100px;
+        overflow-y: hidden;
+
+        .project-cards {
+            gap: 0px;
+
+            .content {
+                gap: 20px;
+
+                .cards {
+                    width: 300px;
+
+                    .card, header, .image-container, img, .technologys-container, .buttons {
+                        width: 300px;
+                    }
+
+                    .card {
+                        flex: 0 0 auto;
+                    }
+                    
+                    .header {
+                        display: flex;
+                        justify-content: center;
+                        padding: 20px;
+
+                        h3 {
+                            font-size: 25px;
+                        }
+                    }
+            
+                    .image-container {
+                        height: 315px;
+                    }
+
+                    .technologys-container {
+                        padding: 25px 15px;
+
+                        .technologys-content {
+                            row-gap: 10px;
+
+                            .technology {
+                                font-size: 12px;
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
+
+                    .buttons {
+                        align-items: center;
+                        gap: 20px;
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 600px) {
     :host {
         margin-bottom: 100px;

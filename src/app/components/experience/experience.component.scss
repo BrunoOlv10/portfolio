@@ -59,6 +59,10 @@
                                 color: transparent;
                                 -webkit-text-fill-color: transparent;
                             }
+
+                            .role, .company {
+                                font-size: 17px;
+                            }
                         }
 
                         .button-control {
@@ -87,6 +91,33 @@
                     
                     p {
                         color: var.$color_secondary_text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    :host {
+        overflow-y: hidden;
+
+        section {
+            h2 {
+                text-align: center;
+                margin-bottom: 40px;
+                width: 270px;
+            }
+
+            .experiences-container {
+                .experience {
+                    width: 400px;
+
+                    .experience-description {                        
+                        p {
+                            font-size: 15px;
+                            overflow-y: hidden;
+                        }
                     }
                 }
             }

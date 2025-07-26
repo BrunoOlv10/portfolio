@@ -68,11 +68,26 @@ button, a {
     transform: scale(1.1);
 }
 
-@media (max-width: 600px) {
-    * {
-        // overflow-x: hidden;
+@media (max-width: 1200px) {
+    .btn {
+        width: 120px;
+        height: 50px;
+        font-size: 18px;
     }
 
+    .btn-project {
+        padding: 7px 10px;
+        font-size: 15px;
+        width: 115px;
+        height: 45px;
+    }
+
+    .btn:hover, .btn-project:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
     body {
         padding-top: 25px;
     }

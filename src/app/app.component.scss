@@ -18,6 +18,12 @@
   z-index: -1;
 }
 
+@media (max-width: 1200px) {
+  :host {
+    overflow-x: hidden;
+  }
+}
+
 @media (max-width: 600px) {
   :host {
     overflow-x: hidden;

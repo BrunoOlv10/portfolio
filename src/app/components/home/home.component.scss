@@ -79,7 +79,55 @@
 }
 
 @media (max-width: 1200px) {
+    :host {
+        section {
+            margin-top: 100px;
+
+            h1 {
+                font-size: 45px;
+                width: 415px;
+                margin-bottom: 30px;
+            }
+
+            .content {
+                flex-direction: column;
+
+                .name-area {
+                    order: 2;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 5px;
+                    margin-bottom: 25px;
+
+                    .name {
+                        font-size: 35px;
+                    }
+
+                    .area {
+                        font-size: 20px;
+                        width: 230px;
+                    }
+                }
+
+                .photo {
+                    order: 1;
+                    margin-bottom: 20px;
     
+                    img {
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+
+                .buttons {
+                    order: 3;
+                    margin-top: 0px;
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 600px) {
@@ -126,7 +174,9 @@
 
                 .buttons {
                     order: 3;
+                    flex-wrap: wrap;
                     gap: 15px;
+                    width: 215px;
                     margin-top: 0px;
                     margin-left: 0px;
                 }

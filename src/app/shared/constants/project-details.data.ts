@@ -9,12 +9,18 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
         {
           title: 'Login',
           image: 'assets/projects/furia/tela-infos.png',
-          description: 'Tela de login com autenticação...'
+          description: 'Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...Tela de login com autenticação...'
+          // description: 'Tela de login com autenticação...'
         },
         {
           title: 'Home',
           image: 'assets/projects/furia/tela-infos.png',
           description: 'Página inicial com chat...'
+        },
+        {
+          title: 'Sobre',
+          image: 'assets/projects/furia/tela-infos.png',
+          description: 'Página sobre...'
         },
       ]
     },
@@ -33,6 +39,11 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
           image: 'assets/projects/furia/tela-infos.png',
           description: 'Página inicial com chat...'
         },
+        {
+          title: 'Sobre',
+          image: 'assets/projects/furia/tela-infos.png',
+          description: 'Página sobre...'
+        },
       ]
     },
     {
@@ -49,6 +60,11 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
           title: 'Home',
           image: 'assets/projects/furia/tela-infos.png',
           description: 'Página inicial com chat...'
+        },
+        {
+          title: 'Sobre',
+          image: 'assets/projects/furia/tela-infos.png',
+          description: 'Página sobre...'
         },
       ]
     },
@@ -67,6 +83,11 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
           image: 'assets/projects/furia/tela-infos.png',
           description: 'Página inicial com chat...'
         },
+        {
+          title: 'Sobre',
+          image: 'assets/projects/furia/tela-infos.png',
+          description: 'Página sobre...'
+        },
       ]
     },
     {
@@ -83,6 +104,11 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
           title: 'Home',
           image: 'assets/projects/furia/tela-infos.png',
           description: 'Página inicial com chat...'
+        },
+        {
+          title: 'Sobre',
+          image: 'assets/projects/furia/tela-infos.png',
+          description: 'Página sobre...'
         },
       ]
     },

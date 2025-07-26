@@ -48,6 +48,48 @@
     }
 }
 
+@media (max-width: 1200px) {
+    :host {
+        margin-bottom: 100px;
+        overflow-y: hidden;
+
+        section {
+            h2 {
+                margin-bottom: 40px;
+            }
+
+            .services-container {
+                gap: 35px;
+                width: 400px;
+                margin-bottom: 25px;
+
+                .service {
+                    width: 400px;
+
+                    .service-header {
+                        display: flex;
+                        align-items: center;
+                        min-height: 65px;
+                        padding: 10px 20px;
+
+                        p {
+                            font-size: 17px;
+                        }
+                    }
+
+                    .service-description {
+                        padding: 20px;
+
+                        p {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 600px) {
     :host {
         margin-bottom: 100px;
@@ -67,10 +109,7 @@
                     width: 200px;
 
                     .service-header {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        min-height: 85px;
+                        min-height: 80px;
                         padding: 10px 20px;
 
                         p {

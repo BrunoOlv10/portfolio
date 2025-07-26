@@ -107,12 +107,16 @@
         }
 
         .description-container {
-            margin: 20px 0 30px 0;
+            display: flex;
+            justify-content: center;
+            max-height: 220px;
+            margin: 40px 0;
+            overflow-y: auto;
 
             .description {
                 font-size: 15px;
                 line-height: 30px;
-                text-align: center;
+                width: fit-content;
             }
         }
 
@@ -121,6 +125,74 @@
             justify-content: center;
             gap: 30px;
             width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    :host {
+        width: 550px;
+
+        header {
+            padding: 24px 15px;
+
+            h3 {
+                font-size: 30px;
+            }
+
+            .close-button-container {
+                right: 25px;
+                top: 50%;
+
+                button {
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        section {
+            padding: 30px 50px;
+
+            .project-cards {
+                gap: 15px;
+
+                button {
+                    padding: 9px 11px;
+                }
+
+                .cards {
+                    width: 300px;
+
+                    .card, .header-container, .image-container, img {
+                        width: 300px;
+                    }
+
+                    .card {
+                        .header-container {
+                            padding: 15px 0;
+
+                            h3 {
+                                font-size: 20px;
+                            }
+                        }
+
+                        .image-container {
+                            height: 320px;
+                            
+                            img {
+                                display: block;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .description-container {
+                max-height: 180px;
+            }
         }
     }
 }
@@ -186,6 +258,11 @@
                         }
                     }
                 }
+            }
+
+            .description-container {
+                margin: 20px 30px 30px 30px;
+                max-height: 150px;
             }
 
             .buttons {
