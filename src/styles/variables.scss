@@ -6,17 +6,20 @@ $color_mini_card_background: #333333;
 $color_mini_card_detail_background: #444444;
 $color_button_hover: #555555;
 
+$filter_dark: brightness(0.8);
+
 $color_blue: #007CF0;
 $color_blue_medium: rgba(0, 124, 240, 0.8);
+
 $color_gray: #999999;
 $color_gray_medium: rgba(153, 153, 153, 0.8);
-
-$color_footer_strong: rgba(0, 124, 240, 0.6);
-$color_footer_medium: rgba(0, 124, 240, 0.4);
 
 $color_primary_text: #FFFFFF;
 $color_secondary_text: rgba(255, 255, 255, 0.700);
 $color_copied_feedback_text: #90ee90;
+
+$color_footer_strong: rgba(0, 124, 240, 0.6);
+$color_footer_medium: rgba(0, 124, 240, 0.4);
 
 $gradient_main: linear-gradient(
   90deg,

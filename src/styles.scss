@@ -68,6 +68,10 @@ button, a {
     transform: scale(1.1);
 }
 
+.dark-filter {
+    filter: var.$filter_dark;
+}
+
 @media (max-width: 1200px) {
     .btn {
         width: 120px;

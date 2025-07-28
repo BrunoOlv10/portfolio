@@ -16,11 +16,12 @@
                         <h3>{{screen.title}}</h3>
                     </div>
                     <div class="image-container">
-                        <img [src]="screen.image" [alt]="'Imagem da tela de ' + screen.title">
+                        <img [src]="screen.image" [alt]="'Imagem da tela de ' + screen.title" [class.dark-filter]="screen.darkFilter">
                     </div>
                 </div>
             }
         </div>
+        
         <button (click)="scrollRight()" [disabled]="atEnd"><i class="fa fa-arrow-right arrow"></i></button>
     </div>
 
@@ -28,6 +29,11 @@
         <p class="description">
             {{selectedScreen.description}}
         </p>
+        @if (currentProject.observation) {
+            <p class="description">
+                OBS: {{currentProject.observation}}
+            </p>
+        }
     </div>
 
     <div class="buttons">

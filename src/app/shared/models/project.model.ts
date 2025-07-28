@@ -3,12 +3,14 @@ export interface Project {
   image: string;
   technologies: string[];
   accessUrl: string;
+  darkFilter?: boolean;
 }
 
 export interface ProjectScreen {
   title: string;
   image: string;
   description: string;
+  darkFilter?: boolean;
 }
 
 export interface ProjectDetails {
@@ -16,4 +18,5 @@ export interface ProjectDetails {
   accessUrl: string;
   codeUrl: string;
   screens: ProjectScreen[];
+  observation?: string;
 }
