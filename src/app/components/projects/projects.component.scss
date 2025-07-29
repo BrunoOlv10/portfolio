@@ -1,7 +1,7 @@
 @use '../../../styles/variables.scss' as var;
 
 :host {
-    margin-bottom: 250px;
+    margin-bottom: 280px;
 
     .project-cards {
         display: flex;
@@ -137,7 +137,7 @@
 
 @media (max-width: 1200px) {
     :host {
-        margin-bottom: 100px;
+        margin-bottom: 200px;
         overflow-y: hidden;
 
         .project-cards {
@@ -194,7 +194,7 @@
 
 @media (max-width: 600px) {
     :host {
-        margin-bottom: 100px;
+        margin-bottom: 150px;
         overflow-y: hidden;
 
         .project-cards {

@@ -1,7 +1,7 @@
 @use '../../../styles/variables.scss' as var;
 
 :host {
-    margin-bottom: 250px;
+    margin-bottom: 280px;
 
     section {
         display: flex;
@@ -101,6 +101,7 @@
 
 @media (max-width: 1200px) {
     :host {
+        margin-bottom: 200px;
         overflow-y: hidden;
 
         section {
@@ -128,6 +129,7 @@
 
 @media (max-width: 600px) {
     :host {
+        margin-bottom: 150px;
         overflow-y: hidden;
 
         section {
