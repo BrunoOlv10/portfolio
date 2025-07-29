@@ -142,6 +142,37 @@
     }
 }
 
+@media (max-height: 900px) {
+    :host {
+      header {
+        padding: 15px;
+      }
+      
+      section {
+        padding: 30px 50px;
+
+        .project-cards {
+            .cards {
+                .card {
+                    .header-container {
+                        padding: 15px 0;
+                    }
+                }
+
+                .image-container {
+                    height: 250px;
+                }
+            }
+        }
+
+        .description-container {
+            max-height: 100px;
+            margin: 30px 0 10px 0;
+        }
+      }
+    }
+}
+
 @media (max-width: 1200px) {
     :host {
         width: 550px;
