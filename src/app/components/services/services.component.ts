@@ -59,7 +59,19 @@ export class ServicesComponent {
 
     if (!element) return;
 
-    const offset = -150;
+    const isMobile = window.innerWidth <= 600;
+
+    const isMedium = window.innerWidth <= 1200;
+
+    let offset: number;
+
+    if (isMobile) {
+      offset = -80;
+    } else if (isMedium) {
+      offset = -100;
+    } else {
+      offset = -250;
+    }
 
     const y = element.getBoundingClientRect().top + window.scrollY + offset;
 

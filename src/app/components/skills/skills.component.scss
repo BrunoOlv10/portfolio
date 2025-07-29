@@ -49,11 +49,10 @@
 
 @media (max-width: 600px) {
     :host {
+        padding: 5px 0;
         margin: 100px 0;
 
         .icon-container {
-            padding: 0;
-
             .icon-content {
                 i {
                     font-size: 15px;

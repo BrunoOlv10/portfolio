@@ -42,7 +42,7 @@
             .cards {
                 display: flex;
                 gap: 50px;
-                max-width: 650px;
+                width: 650px;
                 overflow: hidden;
             }
             
@@ -58,6 +58,10 @@
                 padding: 25px;
                 font-size: 18px;
                 border-radius: 30px 30px 0 0;
+
+                h3 {
+                    text-align: center;
+                }
             }
 
             .image-container {
@@ -145,10 +149,6 @@
                 .cards {
                     width: 300px;
 
-                    .card, header, .image-container, img, .technologys-container, .buttons {
-                        width: 300px;
-                    }
-
                     .card {
                         flex: 0 0 auto;
                     }
@@ -176,6 +176,7 @@
                             .technology {
                                 font-size: 12px;
                                 padding: 5px 10px;
+                                font-weight: 500;
                             }
                         }
                     }
@@ -203,10 +204,10 @@
                 gap: 15px;
 
                 .cards {
-                    width: 220px;
+                    width: 270px;
 
                     .card, header, .image-container, img, .technologys-container, .buttons {
-                        width: 220px;
+                        width: 270px;
                     }
 
                     .card {
@@ -216,7 +217,7 @@
                     .header {
                         display: flex;
                         justify-content: center;
-                        padding: 20px;
+                        padding: 25px 20px;
 
                         h3 {
                             font-size: 20px;
@@ -234,8 +235,8 @@
                             row-gap: 10px;
 
                             .technology {
-                                font-size: 10px;
                                 padding: 5px 10px;
+                                font-weight: 500;
                             }
                         }
                     }
