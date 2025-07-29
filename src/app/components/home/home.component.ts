@@ -54,11 +54,11 @@ export class HomeComponent {
     let offset: number;
 
     if (isMobile) {
-      offset = -100;
+      offset = -70;
     } else if (isMedium) {
-      offset = -120;
+      offset = -110;
     } else {
-      offset = -180;
+      offset = -200;
     }
 
     const y = element.getBoundingClientRect().top + window.scrollY + offset;
