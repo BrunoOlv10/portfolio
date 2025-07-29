@@ -63,13 +63,11 @@ export class ProjectDetailsComponent {
   scrollLeft() {
     const distance = this.getCardScrollDistance();
     this.cardsContainer.nativeElement.scrollBy({ left: -distance, behavior: 'smooth' });
-    this.waitForScrollEnd();
   }
 
   scrollRight() {
     const distance = this.getCardScrollDistance();
     this.cardsContainer.nativeElement.scrollBy({ left: distance, behavior: 'smooth' });
-    this.waitForScrollEnd();
   }
 
   checkScroll() {
@@ -101,31 +99,5 @@ export class ProjectDetailsComponent {
     if (newScreen && newScreen !== this.selectedScreen) {
       this.selectedScreen = newScreen;
     }
-  }
-
-  waitForScrollEnd() {
-    const container = this.cardsContainer.nativeElement;
-    let lastPosition = container.scrollLeft;
-    let stableCounter = 0;
-
-    const check = () => {
-      const currentPosition = container.scrollLeft;
-
-      if (Math.abs(currentPosition - lastPosition) < 1) {
-        stableCounter++;
-      } else {
-        stableCounter = 0;
-      }
-
-      lastPosition = currentPosition;
-
-      if (stableCounter >= 3) {
-        this.checkScroll();
-      } else {
-        requestAnimationFrame(check);
-      }
-    };
-
-    requestAnimationFrame(check);
   }
 }

@@ -55,6 +55,8 @@ export class ProjectsComponent {
     this.initialCheck = true;
     this.observer.takeRecords();
     this.initialCheck = false;
+
+    this.cardsContainer.nativeElement.addEventListener('scroll', () => this.checkScroll());
   }
 
   handleScroll = () => {
@@ -90,13 +92,11 @@ export class ProjectsComponent {
   scrollLeft() {
     const distance = this.getCardScrollDistance();
     this.cardsContainer.nativeElement.scrollBy({ left: -distance, behavior: 'smooth' });
-    this.waitForScrollEnd();
   }
 
   scrollRight() {
     const distance = this.getCardScrollDistance();
     this.cardsContainer.nativeElement.scrollBy({ left: distance, behavior: 'smooth' });
-    this.waitForScrollEnd();
   }
 
   checkScroll() {
@@ -108,31 +108,5 @@ export class ProjectsComponent {
 
     this.atStart = scrollLeft <= tolerance;
     this.atEnd = scrollLeft >= maxScrollLeft - tolerance;
-  }
-
-  waitForScrollEnd() {
-    const container = this.cardsContainer.nativeElement;
-    let lastPosition = container.scrollLeft;
-    let stableCounter = 0;
-
-    const check = () => {
-      const currentPosition = container.scrollLeft;
-
-      if (Math.abs(currentPosition - lastPosition) < 1) {
-        stableCounter++;
-      } else {
-        stableCounter = 0;
-      }
-
-      lastPosition = currentPosition;
-
-      if (stableCounter >= 3) {
-        this.checkScroll();
-      } else {
-        requestAnimationFrame(check);
-      }
-    };
-
-    requestAnimationFrame(check);
   }
 }
