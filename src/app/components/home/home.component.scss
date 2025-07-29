@@ -131,11 +131,11 @@
 @media (max-width: 600px) {
     :host {
         section {
-            margin-top: 150px;
+            margin-top: 100px;
 
             h1 {
-                font-size: 40px;
-                width: 315px;
+                font-size: 50px;
+                width: 400px;
                 margin-bottom: 30px;
             }
 
@@ -151,12 +151,12 @@
                     margin-bottom: 25px;
 
                     .name {
-                        font-size: 25px;
+                        font-size: 35px;
                     }
 
                     .area {
-                        font-size: 20px;
-                        width: 230px;
+                        font-size: 25px;
+                        width: 280px;
                     }
                 }
 
@@ -165,16 +165,17 @@
                     margin-bottom: 20px;
     
                     img {
-                        width: 150px;
-                        height: 150px;
+                        width: 200px;
+                        height: 200px;
                     }
                 }
 
                 .buttons {
                     order: 3;
                     flex-wrap: wrap;
-                    gap: 15px;
-                    width: 215px;
+                    column-gap: 30px;
+                    row-gap: 20px;
+                    width: 250px;
                     margin-top: 0px;
                     margin-left: 0px;
                 }

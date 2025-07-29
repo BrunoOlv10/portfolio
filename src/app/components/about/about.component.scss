@@ -275,29 +275,21 @@
 
                 .about-resume {
                     img {
-                        width: 150px;
-                        height: 150px;
+                        width: 200px;
+                        height: 200px;
                     }
 
                     .name-role {
                         margin: 15px 0 25px 0;
 
                         .name {
-                            font-size: 25px;
+                            font-size: 40px;
                         }
             
                         .role {
-                            width: 220px;
+                            width: 350px;
                             text-align: center;
-                            font-size: 20px;
-                        }
-                    }
-
-                    .social-media {
-                        a {
-                            i {
-                                font-size: 30px;
-                            }
+                            font-size: 30px;
                         }
                     }
                 }
@@ -305,13 +297,13 @@
                 .about-text {
                     .initial-text {
                         p {
-                            font-size: 15px;
+                            font-size: 16px;
                             overflow-y: hidden;
                         }
 
                         .toggle-btn {
                             width: 140px;
-                            font-size: 15px;
+                            font-size: 16px;
                         }
                     }
 
