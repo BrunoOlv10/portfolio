@@ -2,10 +2,10 @@ import { ProjectDetails } from '../models/project.model';
 
 export const PROJECT_DETAILS: ProjectDetails[] = [
     {
-      title: 'Revio Web Scraping',
+      title: 'Web Scraping Revio',
       accessUrl: 'https://revio-desafio-produtos.vercel.app',
       codeUrl: 'https://github.com/BrunoOlv10/revio-desafio-produtos',
-      observation: 'Ao acessar a aplicação pelo botão "Acessar", o carregamento inicial dos dados pode levar até 1 minuto, pois está hospedado em um serviço gratuito.',
+      observation: 'Ao entrar na aplicação pelo botão "Acessar", o carregamento inicial dos dados pode levar até 1 minuto, pois está hospedado em um serviço gratuito.',
       screens: [
         {
           title: 'Início',
@@ -21,17 +21,16 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
         },
         {
           title: 'Ordenação e Exportação',
-          image: 'assets/images-projects/revio-web-scraping/order-export.png',
+          image: 'assets/images-projects/revio-web-scraping/export.png',
           description: 'Também implementei a funcionalidade de exportação dos dados visualizados para arquivos Excel e CSV, mantendo os filtros e ordenação aplicados pelo usuário.',
           darkFilter: true,
         },
       ]
     },
     {
-      title: 'Furia Esports Chat',
-      accessUrl: 'assets/images-projects/furia-esports-chat/furia-chat-preview.mp4',
+      title: 'Chat Furia',
+      accessUrl: 'https://youtu.be/5QNtXcoC_-s',
       codeUrl: 'https://github.com/BrunoOlv10/furia-experiencia-conversacional',
-      observation: 'Como a interação é feita por meio de inteligência artificial, algumas informações podem conter erros. Por isso, é recomendável validar os dados apresentados.',
       screens: [
         {
           title: 'Início',
@@ -46,15 +45,14 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
       ]
     },
     {
-      title: 'Buscador Operadoras',
-      accessUrl: 'assets/images-projects/buscador-operadoras/buscador-operadoras-preview.mp4',
+      title: 'Buscador Intuitive Care',
+      accessUrl: 'https://youtu.be/H45Gsu_MnoE',
       codeUrl: 'https://github.com/BrunoOlv10/intuitive-care-teste-tecnico',
-      observation: 'ANS é a sigla do órgão que regula os planos de saúde no Brasil.',
       screens: [
         {
           title: 'Início',
           image: 'assets/images-projects/buscador-operadoras/default-screen.png',
-          description: 'Desenvolvi uma aplicação que permite realizar buscas pelo nome de operadoras de saúde. Ao pesquisar, o usuário recebe os registros correspondentes, contendo: razão social, nome fantasia, número de registro e data de registro na ANS. A resposta também exibe informações complementares, como o total de resultados encontrados, o número de páginas disponíveis e a página atual. Além disso, é possível navegar entre as páginas e escolher quantos resultados exibir por página, dentro do limite disponível.',
+          description: 'Desenvolvi uma aplicação que permite realizar buscas pelo nome de operadoras de saúde do banco de dados. Ao pesquisar, o usuário recebe os registros correspondentes, contendo: razão social, nome fantasia, número e data de registro na ANS. A resposta também exibe informações complementares, como o total de resultados encontrados, o número de páginas disponíveis e a página atual. Além disso, é possível navegar entre as páginas e escolher quantos resultados exibir por página, dentro do limite disponível.',
           darkFilter: true,
         },
       ]

@@ -11,6 +11,6 @@ export const SERVICES: Service[] = [
     },
     {
       title: 'Tratamento de Dados',
-      description: 'Faço extração, organização e tratamento de dados vindos de sites, arquivos ou bancos de dados. Entrego tudo pronto em formatos como Excel, PDF, web de forma clara e útil.',
+      description: 'Faço extração, organização e tratamento de dados vindos de sites, arquivos ou bancos de dados. Entrego tudo pronto em formatos como Excel, PDF, Web de forma clara e útil.',
     },
 ];

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Service } from '../../shared/models/service.model';
 import { SERVICES } from '../../shared/constants/service.data';
 import { fadeSlideUp } from '../../shared/animations/animations';
@@ -21,6 +21,12 @@ export class ServicesComponent {
 
   lastScrollTop = 0;
   isScrollingDown = false;
+
+  email = "bruno.olvslv@gmail.com";
+  whatsapp = "+55 (11) 97675-4965";
+
+  visiblePopup: string | null = null;
+  copiedKey: string | null = null;
   
   services: Service[] = SERVICES;
 
@@ -53,31 +59,32 @@ export class ServicesComponent {
     this.isScrollingDown = scrollTop > this.lastScrollTop;
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
+  
+  toggleCopyPopup(key: string) {
+    this.visiblePopup = this.visiblePopup === key ? null : key;
+  }
 
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
+  copyPopup(value: string, key: string) {
+    navigator.clipboard.writeText(value).then(() => {
+      this.copiedKey = key;
+      setTimeout(() => {
+        if (this.copiedKey === key) {
+          this.copiedKey = null;
+          this.visiblePopup = null;
+        }
+      }, 2000);
+    });
+  }
+  
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
 
-    if (!element) return;
-
-    const isMobile = window.innerWidth <= 600;
-
-    const isMedium = window.innerWidth <= 1200;
-
-    let offset: number;
-
-    if (isMobile) {
-      offset = -80;
-    } else if (isMedium) {
-      offset = -100;
-    } else {
-      offset = -250;
+    if (target.closest('.copy-container')) {
+      return;
     }
 
-    const y = element.getBoundingClientRect().top + window.scrollY + offset;
-
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth'
-    });
+    this.visiblePopup = null;
+    this.copiedKey = null;
   }
 }

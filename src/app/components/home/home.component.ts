@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +13,12 @@ export class HomeComponent {
   typingSpeed = 150;
   pauseDuration = 3000;
   deleting = false;
+
+  email = "bruno.olvslv@gmail.com";
+  whatsapp = "+55 (11) 97675-4965";
+
+  visiblePopup: string | null = null;
+  copiedKey: string | null = null;
 
   ngOnInit(): void {
     this.startTyping();
@@ -67,5 +73,33 @@ export class HomeComponent {
       top: y,
       behavior: 'smooth'
     });
+  }
+
+  toggleCopyPopup(key: string) {
+    this.visiblePopup = this.visiblePopup === key ? null : key;
+  }
+
+  copyPopup(value: string, key: string) {
+    navigator.clipboard.writeText(value).then(() => {
+      this.copiedKey = key;
+      setTimeout(() => {
+        if (this.copiedKey === key) {
+          this.copiedKey = null;
+          this.visiblePopup = null;
+        }
+      }, 2000);
+    });
+  }
+  
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+
+    if (target.closest('.copy-container')) {
+      return;
+    }
+
+    this.visiblePopup = null;
+    this.copiedKey = null;
   }
 }

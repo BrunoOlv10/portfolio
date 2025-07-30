@@ -54,6 +54,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-direction: column;
+                gap: 5px;
                 background: var.$gradient_main;
                 padding: 25px;
                 font-size: 18px;
@@ -86,7 +88,7 @@
                 justify-content: center;
                 align-items: center;
                 background: var.$color_card_background;
-                padding: 30px;
+                padding: 30px 10px;
 
                 .technologys-content {
                     display: flex;
@@ -98,7 +100,8 @@
                         background: var.$color_blue;
                         text-align: center;
                         cursor: default;
-                        padding: 5px 15px;
+                        font-size: 14px;
+                        padding: 5px 10px;
                         border-radius: 30px;
                         white-space: nowrap;
                         transition: 0.5s;
@@ -217,7 +220,7 @@
                     .header {
                         display: flex;
                         justify-content: center;
-                        padding: 25px 20px;
+                        padding: 20px;
 
                         h3 {
                             font-size: 20px;

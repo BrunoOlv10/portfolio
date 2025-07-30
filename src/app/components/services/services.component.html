@@ -11,6 +11,15 @@
                 </div>
             </div>
         }
+    </div>
+    <div class="copy-container">
+        <a href="https://wa.me/5511976754965" target="_blank" class="btn" (click)="toggleCopyPopup('whatsappButton')">
+            Contatar
+        </a>
+        <div class="copy-popup" [class.visible]="visiblePopup === 'whatsappButton'">
+            {{whatsapp}}
+            <button class="copy-btn" (click)="copyPopup(whatsapp, 'whatsappButton')">Copiar</button>
+            <span class="copied-feedback" [class.visible]="copiedKey === 'whatsappButton'">Copiado!</span>
         </div>
-        <a (click)="scrollToSection('about')" class="btn">Contatar</a>
+    </div>
 </section>

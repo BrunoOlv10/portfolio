@@ -1,5 +1,6 @@
 export interface Project {
-  title: string;
+  type: string;
+  topic: string;
   image: string;
   technologies: string[];
   accessUrl: string;

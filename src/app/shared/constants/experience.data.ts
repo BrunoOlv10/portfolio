@@ -8,7 +8,7 @@ export const EXPERIENCES: Experience[] = [
       durationText: 'jul - dez',
       durationQuantity: '6 meses',
       description: [
-        'Intensivo desenvolvimento com .NET, C# e SQL Server',
+        'Intensiva atuação em desenvolvimento com .NET, C# e SQL Server',
         'Construí endpoints com operações CRUD utilizando C#',
         'Testei rotas de APIs utilizando Postman e Thunder Client',
         'Montei queries no DBeaver utilizando o SQL Server'

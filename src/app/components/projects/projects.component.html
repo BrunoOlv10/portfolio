@@ -7,10 +7,11 @@
         <div class="cards" #cardsContainer>
             <div class="card" *ngFor="let project of projects; trackBy: trackProject">
                 <div class="header">
-                    <h3>{{project.title}}</h3>
+                    <h3>{{project.type}}</h3>
+                    <p>{{project.topic}}</p>
                 </div>
                 <div class="image-container">
-                    <img [src]="project.image" [alt]="'Imagem Principal do Projeto ' + project.title" [class.dark-filter]="project.darkFilter">
+                    <img [src]="project.image" [alt]="'Imagem Principal do Projeto ' + project.type" [class.dark-filter]="project.darkFilter">
                 </div>
                 <div class="technologys-container">
                     <div class="technologys-content">

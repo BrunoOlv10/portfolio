@@ -66,7 +66,7 @@ export class ProjectsComponent {
   }
 
   trackProject(index: number, project: Project): string {
-    return project.title;
+    return project.type;
   }
 
   openProjectDetails(project: any) {

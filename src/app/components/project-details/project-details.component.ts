@@ -20,7 +20,7 @@ export class ProjectDetailsComponent {
   atStart = true;
   atEnd = false;
 
-  projectDatas = PROJECT_DETAILS;
+  projectDetails = PROJECT_DETAILS;
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -37,7 +37,7 @@ export class ProjectDetailsComponent {
   }
 
   loadProjectDetails() {
-    this.currentProject = this.projectDatas.find(p => p.title === this.project.title)!;
+    this.currentProject = this.projectDetails.find(p => p.title === this.project.type)!;
     this.selectedScreen = this.currentProject.screens[0];
 
     setTimeout(() => {

@@ -11,7 +11,7 @@
         padding: 0 100px;
 
         h2 {
-            transform: translateX(-50%);
+            transform: translateX(-140%);
             margin-bottom: 0px;
         }
 
@@ -19,6 +19,7 @@
             display: flex;
             justify-content: space-around;
             gap: 100px;
+            margin-top: 10px;
 
             .about-resume {
                 display: flex;
@@ -69,10 +70,10 @@
                         }
                     }
     
-                    .email-container {
+                    .copy-container {
                         position: relative;
     
-                        .email-button {
+                        .copy-popup {
                             display: flex;
                             align-items: center;
                             gap: 8px;
@@ -87,6 +88,8 @@
                             font-size: 14px;
                             border-radius: 5px;
                             padding: 6px 4px 6px 10px;
+                            white-space: nowrap;
+                            max-width: none;
                             transition: opacity 0.5s;
                             z-index: 1;
 
@@ -116,20 +119,12 @@
                                 overflow: hidden;
                                 transition: opacity 0.5s, max-width 0.5s;
                             }
-                        }
-    
-                        .email-button.copied .copied-feedback {
-                            opacity: 1;
-                            max-width: 100px;
-                            padding-right: 6px;
-                        }
-                    }
-    
-                    @media (hover: hover) and (pointer: fine) {
-                        .email-container:hover .email-button {
-                            visibility: visible;
-                            opacity: 1;
-                            pointer-events: auto;
+
+                            .copied-feedback.visible {
+                                opacity: 1;
+                                max-width: 100px;
+                                padding-right: 6px;
+                            }
                         }
                     }
                 }
@@ -176,6 +171,64 @@
                     display: flex;
                     gap: 50px;
                     margin-top: 40px;
+
+                    .copy-container {
+                        position: relative;
+    
+                        .copy-popup {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            position: absolute;
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                            background-color: var.$color_mini_card_background;
+                            bottom: 100%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            font-size: 14px;
+                            border-radius: 5px;
+                            padding: 6px 4px 6px 10px;
+                            white-space: nowrap;
+                            max-width: none;
+                            transition: opacity 0.5s;
+                            z-index: 1;
+
+                            &.visible {
+                                visibility: visible;
+                                opacity: 1;
+                                pointer-events: auto;
+                            }
+    
+                            .copy-btn {
+                                background: none;
+                                border: 1px solid var.$color_primary_text;
+                                font-size: 12px;
+                                border-radius: 5px;
+                                padding: 2px 6px;
+                            }
+    
+                            .copy-btn:hover {
+                                background: var.$color_button_hover;
+                            }
+    
+                            .copied-feedback {
+                                color: var.$color_copied_feedback_text;
+                                opacity: 0;
+                                max-width: 0;
+                                font-size: 12px;
+                                overflow: hidden;
+                                transition: opacity 0.5s, max-width 0.5s;
+                            }
+
+                            .copied-feedback.visible {
+                                opacity: 1;
+                                max-width: 100px;
+                                padding-right: 6px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -275,21 +328,29 @@
 
                 .about-resume {
                     img {
-                        width: 200px;
-                        height: 200px;
+                        width: 180px;
+                        height: 180px;
                     }
 
                     .name-role {
                         margin: 15px 0 25px 0;
 
                         .name {
-                            font-size: 40px;
+                            font-size: 30px;
                         }
             
                         .role {
-                            width: 350px;
+                            width: 300px;
+                            font-size: 25px;
                             text-align: center;
-                            font-size: 30px;
+                        }
+                    }
+
+                    .social-media {
+                        a {
+                            i {
+                                font-size: 30px;
+                            }
                         }
                     }
                 }

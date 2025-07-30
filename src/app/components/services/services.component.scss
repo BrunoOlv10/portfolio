@@ -45,6 +45,64 @@
                 }
             }
         }
+
+        .copy-container {
+            position: relative;
+    
+            .copy-popup {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                pointer-events: none;
+                background-color: var.$color_mini_card_background;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 14px;
+                border-radius: 5px;
+                padding: 6px 4px 6px 10px;
+                white-space: nowrap;
+                max-width: none;
+                transition: opacity 0.5s;
+                z-index: 1;
+
+                &.visible {
+                    visibility: visible;
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+    
+                .copy-btn {
+                    background: none;
+                    border: 1px solid var.$color_primary_text;
+                    font-size: 12px;
+                    border-radius: 5px;
+                    padding: 2px 6px;
+                }
+    
+                .copy-btn:hover {
+                    background: var.$color_button_hover;
+                }
+    
+                .copied-feedback {
+                    color: var.$color_copied_feedback_text;
+                    opacity: 0;
+                    max-width: 0;
+                    font-size: 12px;
+                    overflow: hidden;
+                    transition: opacity 0.5s, max-width 0.5s;
+                }
+
+                .copied-feedback.visible {
+                    opacity: 1;
+                    max-width: 100px;
+                    padding-right: 6px;
+                }
+            }
+        }
     }
 }
 
@@ -107,7 +165,7 @@
                 margin-bottom: 25px;
 
                 .service {
-                    width: 350px;
+                    width: 250px;
 
                     .service-header {
                         min-height: 80px;

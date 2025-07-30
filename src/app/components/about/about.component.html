@@ -1,5 +1,5 @@
 <section id="about" #aboutSection [@fadeSlideUp]="showElements ? 'visible' : 'static'">
-    <h2>Sobre Mim</h2>
+    <h2>Sobre</h2>
     <div class="content">
         <div class="about-resume">
             <img src="bruno-oliveira-perfil.jpg" alt="Foto Perfil Bruno Oliveira">
@@ -8,17 +8,24 @@
                 <p class="role">Desenvolvedor FullStack com foco em Back-End</p>
             </div>
             <div class="social-media">
-                <a href="https://wa.me/5511976754965" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <div class="email-container">
-                    <a href="mailto:bruno.olvslv@gmail.com" (click)="toggleEmail($event)">
+                <div class="copy-container">
+                    <a href="https://wa.me/5511976754965" target="_blank" (click)="toggleCopyPopup('whatsappIcon')">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <div class="copy-popup" [class.visible]="visiblePopup === 'whatsappIcon'">
+                        {{whatsapp}}
+                        <button class="copy-btn" (click)="copyPopup(whatsapp, 'whatsappIcon')">Copiar</button>
+                        <span class="copied-feedback" [class.visible]="copiedKey === 'whatsappIcon'">Copiado!</span>
+                    </div>
+                </div>
+                <div class="copy-container">
+                    <a href="mailto:bruno.olvslv@gmail.com" (click)="toggleCopyPopup('email')">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
-                    <div class="email-button" [class.visible]="isEmailVisible">
-                        bruno.olvslv&#64;gmail.com
-                        <button class="copy-btn" (click)="copyEmail($event)">Copiar</button>
-                        <span class="copied-feedback" aria-live="polite">Copiado!</span>
+                    <div class="copy-popup" [class.visible]="visiblePopup === 'email'">
+                        {{email}}
+                        <button class="copy-btn" (click)="copyPopup(email, 'email')">Copiar</button>
+                        <span class="copied-feedback" [class.visible]="copiedKey === 'email'">Copiado!</span>
                     </div>
                 </div>
                 <a href="https://www.linkedin.com/in/bruno-olv/" target="_blank">
@@ -43,7 +50,7 @@
                         Sou uma pessoa <span>dedicada</span> e <span>disposta a aprender</span>. Me <span>adapto</span> bem às <span>mudanças</span>, <span>gosto de resolver problemas</span> e acredito no valor do <span>trabalho em equipe</span>.
                     </p>
                     <p>
-                        <span>Me formei em 2023</span> no curso técnico de <span>Análise e Desenvolvimento de Sistemas</span> pela <span>ETEC</span> e, <span>atualmente</span>, curso a <span>graduação</span> na mesma área.
+                        <span>Me formei em 2023</span> no curso técnico de <span>Análise e Desenvolvimento de Sistemas</span> pela ETEC e, <span>atualmente</span>, <span>cursando</span> na FAM a <span>graduação</span> na mesma área.
                     </p>
                 </div>
 
@@ -53,7 +60,16 @@
             </div>
 
             <div class="buttons">
-                <a href="https://wa.me/5511976754965" target="_blank" class="btn">Contatar</a>
+                <div class="copy-container">
+                    <a href="https://wa.me/5511976754965" target="_blank" class="btn" (click)="toggleCopyPopup('whatsappButton')">
+                        Contatar
+                    </a>
+                    <div class="copy-popup" [class.visible]="visiblePopup === 'whatsappButton'">
+                        {{whatsapp}}
+                        <button class="copy-btn" (click)="copyPopup(whatsapp, 'whatsappButton')">Copiar</button>
+                        <span class="copied-feedback" [class.visible]="copiedKey === 'whatsappButton'">Copiado!</span>
+                    </div>
+                </div>
                 <a href="CV_Bruno_Oliveira.pdf" target="_blank" class="btn">Baixar CV</a>
             </div>
         </div>

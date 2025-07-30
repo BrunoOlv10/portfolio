@@ -21,7 +21,11 @@ export class AboutComponent {
   lastScrollTop = 0;
   isScrollingDown = false;
 
-  isEmailVisible = false;
+  email = "bruno.olvslv@gmail.com";
+  whatsapp = "+55 (11) 97675-4965";
+
+  visiblePopup: string | null = null;
+  copiedKey: string | null = null;
 
   showFullText = false;
 
@@ -55,37 +59,32 @@ export class AboutComponent {
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
 
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent): void {
-  const target = event.target as HTMLElement;
-
-    if (!this.aboutSection?.nativeElement.querySelector('.email-container')?.contains(target)) {
-      this.isEmailVisible = false;
-    }
+  toggleCopyPopup(key: string) {
+    this.visiblePopup = this.visiblePopup === key ? null : key;
   }
 
-  copyEmail(event: MouseEvent): void {
-    const button = event.currentTarget as HTMLButtonElement;
-    const emailButton = button.closest(".email-button");
-
-    if (!emailButton) return;
-
-    const email = "bruno.olvslv@gmail.com";
-
-    navigator.clipboard.writeText(email).then(() => {
-        emailButton.classList.add("copied")
-
-        setTimeout(() => {
-            emailButton.classList.remove("copied");
-            this.isEmailVisible = false;
-        }, 2000);
-
+  copyPopup(value: string, key: string) {
+    navigator.clipboard.writeText(value).then(() => {
+      this.copiedKey = key;
+      setTimeout(() => {
+        if (this.copiedKey === key) {
+          this.copiedKey = null;
+          this.visiblePopup = null;
+        }
+      }, 2000);
     });
   }
+  
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
 
-  toggleEmail(event: Event) {
-    event.preventDefault();
-    this.isEmailVisible = !this.isEmailVisible;
+    if (target.closest('.copy-container')) {
+      return;
+    }
+
+    this.visiblePopup = null;
+    this.copiedKey = null;
   }
 
   toggleText() {
