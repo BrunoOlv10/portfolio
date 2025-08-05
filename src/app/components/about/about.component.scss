@@ -12,14 +12,12 @@
 
         h2 {
             transform: translateX(-140%);
-            margin-bottom: 0px;
         }
 
         .content {
             display: flex;
             justify-content: space-around;
             gap: 100px;
-            margin-top: 10px;
 
             .about-resume {
                 display: flex;
@@ -133,7 +131,6 @@
             .about-text {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
 
                 .initial-text {
