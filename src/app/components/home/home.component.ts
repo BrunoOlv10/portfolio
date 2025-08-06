@@ -60,11 +60,11 @@ export class HomeComponent {
     let offset: number;
 
     if (isMobile) {
-      offset = -120;
+      offset = -80;
     } else if (isMedium) {
-      offset = -150;
+      offset = -100;
     } else {
-      offset = -170;
+      offset = -120;
     }
 
     const y = element.getBoundingClientRect().top + window.scrollY + offset;

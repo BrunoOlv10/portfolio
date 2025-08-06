@@ -135,6 +135,14 @@
     }
 }
 
+@media (max-height: 900px) {
+    :host {
+        section {
+            margin-top: 75px;
+        }
+    }
+}
+
 @media (max-width: 1200px) {
     :host {
         section {
@@ -188,7 +196,7 @@
 @media (max-width: 600px) {
     :host {
         section {
-            margin-top: 100px;
+            margin-top: 80px;
 
             h1 {
                 font-size: 40px;

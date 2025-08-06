@@ -72,6 +72,12 @@ button, a {
     filter: var.$filter_dark;
 }
 
+@media (max-height: 900px) {
+    body {
+        padding-top: 35px;
+    }
+}
+
 @media (max-width: 1200px) {
     .btn {
         width: 120px;
@@ -92,6 +98,10 @@ button, a {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding-top: 40px;
+    }
+
     h2 {
         font-size: 40px;
         margin-bottom: 0;
