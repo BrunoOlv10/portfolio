@@ -138,6 +138,29 @@
     }
 }
 
+@media (max-height: 650px) {
+    :host {
+        margin-bottom: 120px;
+
+        .project-cards {
+            .content {
+                .cards {
+                    .card {
+                        .header {
+                            font-size: 16px;
+                            padding: 20px;
+                        }
+
+                        .image-container {
+                            height: 250px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1200px) {
     :host {
         margin-bottom: 200px;

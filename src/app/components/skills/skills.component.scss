@@ -47,6 +47,12 @@
     }
 }
 
+@media (max-height: 650px) {
+    :host {
+        margin: 100px 0 120px 0;
+    }
+}
+
 @media (max-width: 600px) {
     :host {
         padding: 5px 0;

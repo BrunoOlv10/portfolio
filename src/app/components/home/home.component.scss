@@ -135,10 +135,38 @@
     }
 }
 
-@media (max-height: 900px) {
+@media (max-height: 650px) {
     :host {
         section {
-            margin-top: 75px;
+            margin-top: 100px;
+
+            h1 {
+                font-size: 60px;
+            }
+
+            .content {
+                align-items: start;
+                margin-top: 40px;
+
+                .name-area {
+                    margin-top: 35px;
+
+                    .name {
+                        font-size: 45px;
+                    }
+                }
+
+                .photo {                    
+                    img {
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+
+                .buttons {
+                    margin-top: 230px;
+                }
+            }
         }
     }
 }
@@ -154,6 +182,7 @@
 
             .content {
                 flex-direction: column;
+                align-items: center;
 
                 .name-area {
                     order: 2;
