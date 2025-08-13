@@ -149,10 +149,18 @@
                 margin-top: 40px;
 
                 .name-area {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                     margin-top: 35px;
+                    width: 370px;
 
                     .name {
                         font-size: 45px;
+                    }
+
+                    .area {
+                        width: 350px;
                     }
                 }
 

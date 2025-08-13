@@ -83,9 +83,13 @@ button, a {
     filter: var.$filter_dark;
 }
 
-@media (max-height: 900px) {
+@media (max-height: 650px) {
     body {
         padding-top: 35px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
     }
 
     .btn {

@@ -12,11 +12,13 @@
 
         h2 {
             transform: translateX(-140%);
+            margin-bottom: 20px;
         }
 
         .content {
             display: flex;
             justify-content: space-around;
+            align-items: center;
             gap: 100px;
 
             .about-resume {
@@ -224,6 +226,32 @@
                                 max-width: 100px;
                                 padding-right: 6px;
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-height: 650px) {
+    :host {
+        section {
+            .content {
+                .about-resume {
+                    img {
+                        width: 200px;
+                        height: 200px;
+                    }
+
+                    .name-role {
+                        .name {
+                            font-size: 45px;
+                        }
+
+                        .role {
+                            font-size: 25px;
+                            width: 300px;
                         }
                     }
                 }
