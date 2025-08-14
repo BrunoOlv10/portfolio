@@ -132,27 +132,31 @@
         z-index: 1000;
         border-radius: 20px;
 
-        .close-btn {
+        .image-container-model {
             display: flex;
             justify-content: center;
-            align-items: center;
-            background-color: transparent;
-            top: 115px;
-            right: 240px;
-            position: absolute;
-            cursor: pointer;
+            position: relative;
 
-            i {
-                font-size: 24px;
+            .close-btn {
+                display: flex;
+                justify-content: center;
+                background-color: transparent;
+                cursor: pointer;
+                position: absolute;
+                top: 20px;
+                right: 175px;
+    
+                i {
+                    font-size: 24px;
+                }
+            }
+    
+            img {
+                max-width: 70%;
+                max-height: 80%;
+                border-radius: 20px;
             }
         }
-
-        img {
-            max-width: 70%;
-            max-height: 80%;
-            border-radius: 20px;
-        }
-
     }
 
     .modal-projects {
@@ -185,6 +189,20 @@
                             height: 250px;
                         }
                     }
+                }
+            }
+        }
+
+        .modal-image {
+            .image-container-model {
+                .close-btn {
+                    top: 15px;
+                    right: 150px;
+                }
+
+                img {
+                    height: 600px;
+                    width: 850px;
                 }
             }
         }
@@ -303,6 +321,23 @@
                         gap: 15px;
                         padding-bottom: 20px;
                     }
+                }
+            }
+        }
+
+        .modal-image {        
+            .image-container-model {                
+                .close-btn {
+                    top: 10px;
+                    right: 70px;
+
+                    i {
+                        font-size: 17px;
+                    }
+                }
+                
+                img {
+                    height: 350px;
                 }
             }
         }

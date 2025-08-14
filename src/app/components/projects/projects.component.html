@@ -39,10 +39,12 @@
 </section>
 
 <div class="modal-image" *ngIf="imageModalSrc">
-    <button class="close-btn" (click)="closeImage()">
-        <i class="fa-solid fa-xmark"></i>
-    </button>
-  <img [src]="imageModalSrc" alt="Imagem ampliada">
+    <div class="image-container-model">
+        <img [src]="imageModalSrc" alt="Imagem ampliada">
+        <button class="close-btn" (click)="closeImage()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
 </div>
 
 @if (selectedProject) {
