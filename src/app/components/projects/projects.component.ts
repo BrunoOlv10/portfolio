@@ -31,6 +31,8 @@ export class ProjectsComponent {
   lastScrollTop = 0;
   isScrollingDown = false;
 
+  imageModalSrc: string | null = null;
+
   projects: Project[] = PROJECTS;
    
   ngOnInit() {
@@ -108,5 +110,13 @@ export class ProjectsComponent {
 
     this.atStart = scrollLeft <= tolerance;
     this.atEnd = scrollLeft >= maxScrollLeft - tolerance;
+  }
+
+  openImage(imageUrl: string) {
+    this.imageModalSrc = imageUrl;
+  }
+
+  closeImage() {
+    this.imageModalSrc = null;
   }
 }
