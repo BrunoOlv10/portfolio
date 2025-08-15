@@ -37,6 +37,12 @@ export class ProjectsComponent {
    
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && this.imageModalSrc) {
+        this.closeImage();
+      }
+    });
   }
 
   ngAfterViewInit() {
