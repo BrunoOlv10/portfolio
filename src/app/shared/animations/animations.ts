@@ -1,4 +1,4 @@
-import {trigger, style, animate, transition, state} from '@angular/animations';
+import {trigger, style, animate, transition} from '@angular/animations';
 
 export const fadeSlideUp = trigger('fadeSlideUp', [
   transition('static => visible', [

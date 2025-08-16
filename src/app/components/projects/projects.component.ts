@@ -31,9 +31,9 @@ export class ProjectsComponent {
   lastScrollTop = 0;
   isScrollingDown = false;
 
-  imageModalSrc: string | null = null;
-
   projects: Project[] = PROJECTS;
+  
+  imageModalSrc: string | null = null;
    
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);

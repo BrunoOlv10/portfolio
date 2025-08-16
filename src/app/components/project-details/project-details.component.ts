@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { Project, ProjectDetails, ProjectScreen } from '../../shared/models/project.model';
+import { fadeInZoomUp } from '../../shared/animations/animations';
 import { PROJECT_DETAILS } from '../../shared/constants/project-details.data';
 
 @Component({
@@ -7,6 +8,7 @@ import { PROJECT_DETAILS } from '../../shared/constants/project-details.data';
   imports: [],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss',
+  animations: [fadeInZoomUp],
 })
 export class ProjectDetailsComponent {
   @Input() project!: Project;
@@ -22,12 +24,20 @@ export class ProjectDetailsComponent {
 
   projectDetails = PROJECT_DETAILS;
 
+  imageModalSrc: string | null = null;
+
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.checkScroll();
     });
 
     this.cardsContainer.nativeElement.addEventListener('scroll', () => this.checkScroll());
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && this.imageModalSrc) {
+        this.closeImage();
+      }
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -99,5 +109,13 @@ export class ProjectDetailsComponent {
     if (newScreen && newScreen !== this.selectedScreen) {
       this.selectedScreen = newScreen;
     }
+  }
+
+  openImage(imageUrl: string) {
+    this.imageModalSrc = imageUrl;
+  }
+
+  closeImage() {
+    this.imageModalSrc = null;
   }
 }
