@@ -2,6 +2,37 @@ import { ProjectDetails } from '../models/project.model';
 
 export const PROJECT_DETAILS: ProjectDetails[] = [
     {
+      title: 'Cadastro CNPJ Localize',
+      accessUrl: '#',
+      codeUrl: 'https://github.com/BrunoOlv10/localize-cadastro-empresas',
+      screens: [
+        {
+          title: 'Início',
+          image: 'assets/images-projects/localize-cadastro-cnpj/login.png',
+          description: 'Projeto desenvolvido para cadastrar empresas, permitindo que cada usuário vincule CNPJs ao seu perfil e visualize todas as empresas associadas de forma organizada. O acesso começa pela tela de login, mas quem ainda não tem conta pode criar clicando em "Criar conta".',
+          darkFilter: true,
+        },
+        {
+          title: 'Cadastro de Conta',
+          image: 'assets/images-projects/localize-cadastro-cnpj/register.png',
+          description: 'Na tela de registro o usuário informa nome, e-mail e senha para criar sua conta e começar a usar o sistema.',
+          darkFilter: true,
+        },
+        {
+          title: 'Cadastro CNPJ e Listagem',
+          image: 'assets/images-projects/localize-cadastro-cnpj/default.png',
+          description: 'Na primeira área, o usuário insere um CNPJ válido e clica no botão "Cadastrar" para vincular ao seu perfil. Logo abaixo, é exibida a lista de todos os CNPJs cadastrados naquela conta.',
+          darkFilter: true,
+        },
+        {
+          title: 'Paginação e Ordenação',
+          image: 'assets/images-projects/localize-cadastro-cnpj/page-order.png',
+          description: 'Exibe todas as empresas vinculadas, com paginação, ordenação e informações sobre a quantidade de resultados e a página atual.',
+          darkFilter: true,
+        },
+      ]
+    },
+    {
       title: 'Web Scraping Revio',
       accessUrl: 'https://revio-desafio-produtos.vercel.app',
       codeUrl: 'https://github.com/BrunoOlv10/revio-desafio-produtos',
@@ -29,7 +60,7 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
     },
     {
       title: 'Chat Furia',
-      accessUrl: 'https://youtu.be/5QNtXcoC_-s',
+      accessUrl: '#',
       codeUrl: 'https://github.com/BrunoOlv10/furia-experiencia-conversacional',
       screens: [
         {
@@ -46,7 +77,7 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
     },
     {
       title: 'Buscador Intuitive Care',
-      accessUrl: 'https://youtu.be/H45Gsu_MnoE',
+      accessUrl: '#',
       codeUrl: 'https://github.com/BrunoOlv10/intuitive-care-teste-tecnico',
       screens: [
         {
