@@ -13,21 +13,23 @@
                             <p class="company">{{experience.company}}</p>
                             <!-- <p>{{experience.durationText}} - <span>{{experience.durationQuantity}}</span></p> -->
                         </div>
-                        <div class="button-control" (click)="toggleDescription($index)">
-                            @if(!isOpen($index)) {
-                                <i class="fa-solid fa-angle-down"></i>
-                            }
-    
-                            @if(isOpen($index)) {
-                                <i class="fa-solid fa-angle-up"></i>
-                            }
-                        </div>
+                        @if (experience.description?.[0]?.trim()) {
+                            <div class="button-control" (click)="toggleDescription($index)">
+                                @if(!isOpen($index)) {
+                                    <i class="fa-solid fa-angle-down"></i>
+                                }
+        
+                                @if(isOpen($index)) {
+                                    <i class="fa-solid fa-angle-up"></i>
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
                 @if(isOpen($index)) {
                     <div class="experience-description" @expandCollapse>
-                        @for (item of experience.description; track item) {
-                            <p>- {{item}};</p>
+                        @for (item of experience.description; let last = $last; track item) {
+                            <p>- {{item}}{{last ? '.' : ';'}}</p>
                         }
                     </div>
                 }

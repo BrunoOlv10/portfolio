@@ -14,4 +14,14 @@ export const EXPERIENCES: Experience[] = [
         'Montei queries no DBeaver utilizando o SQL Server'
       ]
     },
+    {
+      year: 2025,
+      role: 'Desenvolvedor Front-End',
+      company: 'Superix',
+      durationText: '',
+      durationQuantity: '',
+      description: [
+        ''
+      ]
+    }
 ];
