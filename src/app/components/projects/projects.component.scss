@@ -74,8 +74,22 @@
                 img {
                     display: block;
                     height: 100%;
+                    width: 100%;
                     cursor: pointer;
+                    transform: scale(1.02);
+                    transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
+                    opacity: 1;
                 }
+            }
+
+            .image-container img.fade-in {
+                opacity: 1;
+                transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
+            }
+
+            .image-container img:not(.fade-in) {
+                opacity: 0;
+                transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
             }
 
             .technologys-container {

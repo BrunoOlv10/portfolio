@@ -1,3 +1,10 @@
+export interface ProjectScreen {
+  title: string;
+  image: string;
+  description?: string;
+  darkFilter?: boolean;
+}
+
 export interface Project {
   type: string;
   topic: string;
@@ -5,13 +12,9 @@ export interface Project {
   technologies: string[];
   accessUrl: string;
   darkFilter?: boolean;
-}
-
-export interface ProjectScreen {
-  title: string;
-  image: string;
-  description: string;
-  darkFilter?: boolean;
+  screens?: ProjectScreen[];
+  currentIndex?: number;
+  isFading?: boolean;
 }
 
 export interface ProjectDetails {

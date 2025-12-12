@@ -11,7 +11,12 @@
                     <p>{{project.topic}}</p>
                 </div>
                 <div class="image-container">
-                    <img [src]="project.image" [alt]="'Imagem Principal do Projeto ' + project.type" [class.dark-filter]="project.darkFilter" (click)="openImage(project.image)">
+                    <img
+                        [src]="project.screens![project.currentIndex!].image"
+                        [class.dark-filter]="project.screens![project.currentIndex!].darkFilter"
+                        [class.fade-in]="project.isFading"
+                        (click)="openImage(project.screens![project.currentIndex!].image)"
+                    />
                 </div>
                 <div class="technologys-container">
                     <div class="technologys-content">

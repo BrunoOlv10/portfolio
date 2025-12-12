@@ -4,6 +4,7 @@ import { Project } from '../../shared/models/project.model';
 import { CommonModule } from '@angular/common';
 import { fadeSlideUp, fadeInZoomUp } from '../../shared/animations/animations';
 import { PROJECTS } from '../../shared/constants/projects.data';
+import { PROJECT_DETAILS } from '../../shared/constants/project-details.data';
 
 @Component({
   selector: 'app-projects',
@@ -31,9 +32,15 @@ export class ProjectsComponent {
   lastScrollTop = 0;
   isScrollingDown = false;
 
-  projects: Project[] = PROJECTS;
+  projects: Project[] = [];
   
   imageModalSrc: string | null = null;
+
+  private intervalId: any = null;
+  private fadeTimeout = 220;
+  private rotateInterval = 5000;
+
+  fade = false;
    
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);
@@ -43,6 +50,23 @@ export class ProjectsComponent {
         this.closeImage();
       }
     });
+
+    this.projects = PROJECTS.map(p => {
+      const details = PROJECT_DETAILS.find(d => d.title === p.type);
+      const screens = details?.screens ?? [];
+
+      return {
+        ...p,
+        screens: screens.length ? screens : [{ 
+          title: p.type, 
+          image: p.image,
+        }],
+        currentIndex: 0,
+        isFading: true
+      };
+    });
+
+    this.startAutoCarousel();
   }
 
   ngAfterViewInit() {
@@ -58,13 +82,47 @@ export class ProjectsComponent {
       }
     });
 
-    this.observer.observe(this.projectsSection.nativeElement);
+    if (this.projectsSection?.nativeElement) {
+      this.observer.observe(this.projectsSection.nativeElement);
+    }
 
     this.initialCheck = true;
     this.observer.takeRecords();
     this.initialCheck = false;
 
-    this.cardsContainer.nativeElement.addEventListener('scroll', () => this.checkScroll());
+    if (this.cardsContainer?.nativeElement) {
+      this.cardsContainer.nativeElement.addEventListener('scroll', () => this.checkScroll());
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+
+    window.removeEventListener('scroll', this.handleScroll, true);
+  }
+
+  startAutoCarousel() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+
+    this.intervalId = setInterval(() => {
+      this.projects.forEach((project) => {
+        if (!project.screens || project.screens.length <= 1) return;
+
+        project.isFading = false;
+
+        setTimeout(() => {
+          const max = project.screens!.length;
+          project.currentIndex = ((project.currentIndex ?? 0) + 1) % max;
+          project.isFading = true;
+        }, this.fadeTimeout);
+      });
+    }, this.rotateInterval);
   }
 
   handleScroll = () => {
