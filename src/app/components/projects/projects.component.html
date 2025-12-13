@@ -12,9 +12,10 @@
                 </div>
                 <div class="image-container">
                     <img
-                        [src]="project.screens![project.currentIndex!].image"
-                        [class.dark-filter]="project.screens![project.currentIndex!].darkFilter"
-                        [class.fade-in]="project.isFading"
+                        class="image"
+                        [src]="project.screens[project.currentIndex].image"
+                        [class.dark-filter]="project.screens[project.currentIndex].darkFilter"
+                        [class.animate]="animate"
                         (click)="openImage(project.screens![project.currentIndex!].image)"
                     />
                 </div>

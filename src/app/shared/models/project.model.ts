@@ -13,8 +13,11 @@ export interface Project {
   accessUrl: string;
   darkFilter?: boolean;
   screens?: ProjectScreen[];
-  currentIndex?: number;
-  isFading?: boolean;
+}
+
+export interface ProjectCarousel extends Project {
+  screens: ProjectScreen[];
+  currentIndex: number;
 }
 
 export interface ProjectDetails {

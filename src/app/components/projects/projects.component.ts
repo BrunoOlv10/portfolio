@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
-import { Project } from '../../shared/models/project.model';
+import { Project, ProjectCarousel } from '../../shared/models/project.model';
 import { CommonModule } from '@angular/common';
 import { fadeSlideUp, fadeInZoomUp } from '../../shared/animations/animations';
 import { PROJECTS } from '../../shared/constants/projects.data';
@@ -32,15 +32,12 @@ export class ProjectsComponent {
   lastScrollTop = 0;
   isScrollingDown = false;
 
-  projects: Project[] = [];
+  projects: ProjectCarousel[] = [];
   
   imageModalSrc: string | null = null;
 
   private intervalId: any = null;
-  private fadeTimeout = 220;
   private rotateInterval = 5000;
-
-  fade = false;
    
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);
@@ -53,16 +50,12 @@ export class ProjectsComponent {
 
     this.projects = PROJECTS.map(p => {
       const details = PROJECT_DETAILS.find(d => d.title === p.type);
-      const screens = details?.screens ?? [];
+      const screens = details?.screens?.length ? details.screens : [{ title: p.type, image: p.image, darkFilter: p.darkFilter }];
 
       return {
         ...p,
-        screens: screens.length ? screens : [{ 
-          title: p.type, 
-          image: p.image,
-        }],
-        currentIndex: 0,
-        isFading: true
+        screens,
+        currentIndex: 0
       };
     });
 
@@ -105,22 +98,18 @@ export class ProjectsComponent {
   }
 
   startAutoCarousel() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-      this.intervalId = null;
-    }
-
     this.intervalId = setInterval(() => {
-      this.projects.forEach((project) => {
-        if (!project.screens || project.screens.length <= 1) return;
+      this.projects.forEach(project => {
+        if (project.screens.length <= 1) return;
 
-        project.isFading = false;
+        this.animate = false;
 
-        setTimeout(() => {
-          const max = project.screens!.length;
-          project.currentIndex = ((project.currentIndex ?? 0) + 1) % max;
-          project.isFading = true;
-        }, this.fadeTimeout);
+        requestAnimationFrame(() => {
+          project.currentIndex =
+            (project.currentIndex + 1) % project.screens.length;
+
+          this.animate = true;
+        });
       });
     }, this.rotateInterval);
   }
