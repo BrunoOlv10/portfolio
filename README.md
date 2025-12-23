@@ -1,59 +1,92 @@
-# Portfolio
+# 🚀 Portfólio Bruno Oliveira
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+Portfólio pessoal desenvolvido com Angular, apresentando projetos, habilidades e informações profissionais de forma moderna e responsiva.
 
-## Development server
+## 🌐 Como Acessar
 
-To start a local development server, run:
+Acesse o portfólio: [portfolio-bruno-olv.vercel.app](https://portfolio-bruno-olv.vercel.app)
+
+## 📋 Sobre o Projeto
+
+Este portfólio foi desenvolvido para apresentar a minha trajetória profissional, habilidades técnicas e projetos desenvolvidos. A aplicação foi construída utilizando boas práticas de desenvolvimento e design responsivo, garantindo uma experiência fluida em diversos os dispositivos.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **[Angular 19.2.7](https://angular.io/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
+- **[SCSS](https://sass-lang.com/)**
+- **[HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)**
+- **[Node.js](https://nodejs.org/)**
+- **[Vercel](https://vercel.com/)** - Hospedagem
+```
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+- [Angular CLI](https://angular.io/cli)
+
+### Instalação
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/BrunoOlv10/portfolio.git
+```
+
+2. Acesse o diretório do projeto:
+```bash
+cd portfolio
+```
+
+3. Instale as dependências:
+```bash
+npm install
+```
+
+### Executando em Desenvolvimento
+
+Para iniciar o servidor de desenvolvimento:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+ou
 
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+Acesse `http://localhost:4200/` no seu navegador. A aplicação será recarregada automaticamente quando você modificar qualquer arquivo fonte.
 ```
 
-## Building
+## 🌟 Componentes Principais
 
-To build the project run:
+### Home
+Seção inicial com apresentação
 
-```bash
-ng build
-```
+### Sobre
+Informações profissionais e pessoais
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Projetos
+Cards de projetos desenvolvidos com tecnologias e links
 
-## Running unit tests
+### Habilidades
+Representação visual das competências técnicas
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Contato
+Informações de contato
 
-```bash
-ng test
-```
+## 👨‍💻 Autor
 
-## Running end-to-end tests
+**Bruno Oliveira**
 
-For end-to-end (e2e) testing, run:
+- GitHub: [@BrunoOlv10](https://github.com/BrunoOlv10)
+- Portfólio: [portfolio-bruno-olv.vercel.app](https://portfolio-bruno-olv.vercel.app)
 
-```bash
-ng e2e
-```
+## 📞 Contato
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Para entrar em contato ou saber mais sobre meus projetos, visite meu portfólio ou conecte-se comigo através das redes sociais disponíveis no site.

@@ -33,7 +33,7 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
       ]
     },
     {
-      title: 'Web Scraping Revio',
+      title: 'Extração de Dados Revio',
       accessUrl: 'https://revio-desafio-produtos.vercel.app',
       codeUrl: 'https://github.com/BrunoOlv10/revio-desafio-produtos',
       observation: 'Ao entrar na aplicação pelo botão "Acessar", o carregamento inicial dos dados pode levar até 1 minuto, pois está hospedado em um serviço gratuito.',
@@ -59,7 +59,7 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
       ]
     },
     {
-      title: 'Chat Furia',
+      title: 'Chat com IA Furia',
       accessUrl: '#',
       codeUrl: 'https://github.com/BrunoOlv10/furia-experiencia-conversacional',
       screens: [
@@ -76,7 +76,7 @@ export const PROJECT_DETAILS: ProjectDetails[] = [
       ]
     },
     {
-      title: 'Buscador Intuitive Care',
+      title: 'Extração de Dados Saúde',
       accessUrl: '#',
       codeUrl: 'https://github.com/BrunoOlv10/intuitive-care-teste-tecnico',
       screens: [

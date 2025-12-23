@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
       accessUrl: '#',
     },
     {
-      type: 'Extração de Dados',
+      type: 'Extração de Dados Saúde',
       topic: 'Web Scraping',
       image: 'assets/images-projects/buscador-operadoras/default-screen.png',
       technologies: ['Vue', 'CSS', 'JavaScript', 'Python', 'MySQL'],
