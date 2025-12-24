@@ -12,14 +12,13 @@ Este portfólio foi desenvolvido para apresentar a minha trajetória profissiona
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **[Angular 19.2.7](https://angular.io/)**
+- **[Angular](https://angular.io/)**
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[SCSS](https://sass-lang.com/)**
 - **[HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)**
 - **[Node.js](https://nodejs.org/)**
 - **[Vercel](https://vercel.com/)** - Hospedagem
-```
-
+  
 ## 🚀 Como Executar
 
 ### Pré-requisitos
@@ -61,24 +60,23 @@ npm start
 ```
 
 Acesse `http://localhost:4200/` no seu navegador. A aplicação será recarregada automaticamente quando você modificar qualquer arquivo fonte.
-```
 
 ## 🌟 Componentes Principais
 
 ### Home
 Seção inicial com apresentação
 
+### Projetos
+Cards de projetos desenvolvidos contendo descrições, tecnologias e links
+
 ### Sobre
 Informações profissionais e pessoais
 
-### Projetos
-Cards de projetos desenvolvidos com tecnologias e links
+### Serviços
+Tipos de produtos que desenvolvo
 
-### Habilidades
-Representação visual das competências técnicas
-
-### Contato
-Informações de contato
+### Carreira
+Minha trajetória profissional
 
 ## 👨‍💻 Autor
 
