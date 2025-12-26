@@ -53,6 +53,12 @@
     }
 }
 
+@media (max-width: 1200px) {
+    :host {
+        margin: 50px 0 120px 0;
+    }
+}
+
 @media (max-width: 600px) {
     :host {
         padding: 5px 0;

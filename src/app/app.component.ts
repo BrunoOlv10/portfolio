@@ -7,10 +7,11 @@ import { AboutComponent } from './components/about/about.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ServicesComponent } from './components/services/services.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ButtonToTopDownComponent } from './components/button-to-top-down/button-to-top-down.component';
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, HomeComponent, SkillsComponent, ProjectsComponent, AboutComponent, ExperienceComponent, ServicesComponent, FooterComponent],
+  imports: [NavbarComponent, ButtonToTopDownComponent, HomeComponent, SkillsComponent, ProjectsComponent, AboutComponent, ExperienceComponent, ServicesComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

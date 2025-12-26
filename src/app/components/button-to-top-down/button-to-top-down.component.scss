@@ -1,0 +1,23 @@
+@use '../../../styles/variables.scss' as var;
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+
+    i {
+        background-color: var.$color_blue_medium;
+        border-radius: 50%;
+        padding: 10px 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    .buttons {
+        bottom: 10px;
+        right: 10px;
+    }
+}
