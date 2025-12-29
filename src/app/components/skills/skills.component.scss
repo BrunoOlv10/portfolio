@@ -47,22 +47,28 @@
     }
 }
 
-@media (max-height: 650px) {
+@media (max-height: 1000px) {
+    :host {
+        margin: 160px 0 120px 0;
+    }
+}
+
+@media (max-height: 800px) {
     :host {
         margin: 100px 0 120px 0;
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (max-height: 800px) {
     :host {
-        margin: 50px 0 120px 0;
+        margin: 30px 0 120px 0;
     }
 }
 
 @media (max-width: 600px) {
     :host {
+        margin: 90px 0 200px 0;
         padding: 5px 0;
-        margin: 120px 0 200px 0;
 
         .icon-container {
             .icon-content {

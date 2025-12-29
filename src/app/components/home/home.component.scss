@@ -135,10 +135,18 @@
     }
 }
 
-@media (max-height: 650px) {
+@media (max-height: 1000px) {
     :host {
         section {
-            margin-top: 100px;
+            margin-top: 130px;
+        }
+    }
+}
+
+@media (max-height: 800px) {
+    :host {
+        section {
+            margin-top: 120px;
 
             h1 {
                 font-size: 60px;
@@ -179,7 +187,7 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (max-height: 800px) {
     :host {
         section {
             margin-top: 80px;
@@ -232,10 +240,10 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
     :host {
         section {
-            margin-top: 80px;
+            margin-top: 20px;
 
             h1 {
                 font-size: 40px;
@@ -279,11 +287,19 @@
                     flex-wrap: wrap;
                     column-gap: 30px;
                     row-gap: 20px;
-                    width: 250px;
+                    width: 300px;
                     margin-top: 0px;
                     margin-left: 0px;
                 }
             }
+        }
+    }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+    :host {
+        section {
+            margin-top: 120px;
         }
     }
 }
