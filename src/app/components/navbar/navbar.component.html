@@ -1,9 +1,25 @@
 <nav>
-    <ul>
-        <li><a (click)="scrollToSection('home')">Início</a></li>
-        <li><a (click)="scrollToSection('projects')"><span>Projetos</span></a></li>
-        <li><a (click)="scrollToSection('about')">Sobre</a></li>
-        <li><a (click)="scrollToSection('services')">Serviços</a></li>
-        <li><a (click)="scrollToSection('experience')">Carreira</a></li>
+    <button class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <ul [class.open]="isMenuOpen">
+        <li>
+            <a (click)="scrollToSection('home')">Início</a>
+        </li>
+        <li>
+            <a (click)="scrollToSection('projects')">Projetos</a>
+        </li>
+        <li>
+            <a (click)="scrollToSection('about')">Sobre</a>
+        </li>
+        <li>
+            <a (click)="scrollToSection('services')">Serviços</a>
+        </li>
+        <li>
+            <a (click)="scrollToSection('experience')">Carreira</a>
+        </li>
     </ul>
 </nav>

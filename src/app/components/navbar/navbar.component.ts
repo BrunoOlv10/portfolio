@@ -7,7 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    if (window.innerWidth <= 600) {
+      this.isMenuOpen = !this.isMenuOpen;
+    }
+  }
+
   scrollToSection(sectionId: string) {
+    this.isMenuOpen = false;
+
     const element = document.getElementById(sectionId);
     if (!element) return;
 

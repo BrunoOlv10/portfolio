@@ -1,4 +1,12 @@
 <div class="buttons">
-    <a href="#home"><i class="fa fa-arrow-up arrow"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down arrow"></i></a>
+    @if (showTopButton) {
+        <a (click)="scrollToTop()">
+            <i class="fa fa-arrow-up arrow"></i>
+        </a>
+    }
+    @if (showDownButton) {
+        <a (click)="scrollToBottom()">
+            <i class="fa fa-arrow-down arrow"></i>
+        </a>
+    }
 </div>
