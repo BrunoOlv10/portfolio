@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
-import { Project, ProjectCarousel } from '../../shared/models/project.model';
+import { Project, ProjectCarousel, ProjectScreen } from '../../shared/models/project.model';
 import { CommonModule } from '@angular/common';
 import { fadeSlideUp, fadeInZoomUp } from '../../shared/animations/animations';
 import { PROJECTS } from '../../shared/constants/projects.data';
@@ -48,15 +48,20 @@ export class ProjectsComponent {
       }
     });
 
-    this.projects = PROJECTS.map(p => {
+    this.projects = PROJECTS.map((p) => {
       const details = PROJECT_DETAILS.find(d => d.title === p.type);
-      const screens = details?.screens?.length ? details.screens : [{ title: p.type, image: p.image, darkFilter: p.darkFilter }];
+      const screens: ProjectScreen[] = details?.screens?.length
+        ? details.screens 
+        : [{ title: p.type, image: p.image, darkFilter: p.darkFilter }];
 
-      return {
+      const projectCarousel: ProjectCarousel = {
         ...p,
         screens,
-        currentIndex: 0
+        currentIndex: 0,
+        animate: false
       };
+
+      return projectCarousel;
     });
 
     this.startAutoCarousel();
@@ -105,8 +110,7 @@ export class ProjectsComponent {
         this.animate = false;
 
         requestAnimationFrame(() => {
-          project.currentIndex =
-            (project.currentIndex + 1) % project.screens.length;
+          project.currentIndex = (project.currentIndex + 1) % project.screens.length;
 
           this.animate = true;
         });

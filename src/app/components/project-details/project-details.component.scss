@@ -137,7 +137,7 @@
     }
 }
 
-@media (max-height: 650px) {
+@media (max-height: 750px) {
     :host {
       header {
         padding: 20px;
@@ -186,9 +186,10 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 600px) and (max-width: 1200px) {
     :host {
-        width: 550px;
+        min-width: 550px;
+        max-width: 80vw;
 
         header {
             padding: 24px 15px;

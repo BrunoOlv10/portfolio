@@ -18,6 +18,7 @@ export interface Project {
 export interface ProjectCarousel extends Project {
   screens: ProjectScreen[];
   currentIndex: number;
+  animate: boolean;
 }
 
 export interface ProjectDetails {

@@ -15,7 +15,7 @@
                         class="image"
                         [src]="project.screens[project.currentIndex].image"
                         [class.dark-filter]="project.screens[project.currentIndex].darkFilter"
-                        [class.animate]="animate"
+                        [class.animate]="project.animate"
                         (click)="openImage(project.screens![project.currentIndex!].image)"
                     />
                 </div>
