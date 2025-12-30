@@ -107,12 +107,12 @@ export class ProjectsComponent {
       this.projects.forEach(project => {
         if (project.screens.length <= 1) return;
 
-        this.animate = false;
+        project.animate = false;
 
         requestAnimationFrame(() => {
-          project.currentIndex = (project.currentIndex + 1) % project.screens.length;
-
-          this.animate = true;
+            project.currentIndex = (project.currentIndex + 1) % project.screens.length;
+          
+            project.animate = true;
         });
       });
     }, this.rotateInterval);
