@@ -31,9 +31,11 @@ export class SkillsComponent {
 
   get repeatedIcons(): string[] {
     const arr: string[] = [];
+
     for (let i = 0; i < this.repeatCount; i++) {
       arr.push(...this.icons);
     }
+    
     return arr;
   }
 }
