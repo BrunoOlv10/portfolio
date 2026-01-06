@@ -13,7 +13,7 @@ import { Experience } from '../../shared/models/experience.model';
 export class ExperienceComponent {
   @ViewChild('experienceSection') experienceSection!: ElementRef<HTMLDivElement>;
 
-  showElements = false;
+  showAnimation = false;
 
   observer!: IntersectionObserver;
 
@@ -35,11 +35,11 @@ export class ExperienceComponent {
       const entry = entries[0];
 
       if (entry.isIntersecting && this.isScrollingDown) {
-        this.showElements = true;
+        this.showAnimation = true;
       }
 
       if (!entry.isIntersecting && !this.isScrollingDown) {
-        this.showElements = false;
+        this.showAnimation = false;
       }
     });
 

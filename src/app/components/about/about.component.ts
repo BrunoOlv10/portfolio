@@ -12,22 +12,20 @@ import { CommonModule } from '@angular/common';
 export class AboutComponent {
   @ViewChild('aboutSection') aboutSection!: ElementRef<HTMLDivElement>;
 
-  showElements = false;
+  showAnimation = false;
+  showFullText = false;
+  visiblePopup: string | null = null;
+  copiedKey: string | null = null;
+
+  lastScrollTop = 0;
+  isScrollingDown = false;
 
   observer!: IntersectionObserver;
 
   initialCheck = false;
 
-  lastScrollTop = 0;
-  isScrollingDown = false;
-
   email = "bruno.olvslv@gmail.com";
   whatsapp = "+55 (11) 97675-4965";
-
-  visiblePopup: string | null = null;
-  copiedKey: string | null = null;
-
-  showFullText = false;
 
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);
@@ -38,11 +36,11 @@ export class AboutComponent {
       const entry = entries[0];
 
       if (entry.isIntersecting && this.isScrollingDown) {
-        this.showElements = true;
+        this.showAnimation = true;
       }
 
       if (!entry.isIntersecting && !this.isScrollingDown) {
-        this.showElements = false;
+        this.showAnimation = false;
       }
     });
 
@@ -53,8 +51,14 @@ export class AboutComponent {
     this.initialCheck = false;
   }
 
+  ngOnDestroy() {
+    window.removeEventListener('scroll', this.handleScroll, true);
+    this.observer?.disconnect();
+  }
+
   handleScroll = () => {
     const scrollTop = window.scrollY;
+
     this.isScrollingDown = scrollTop > this.lastScrollTop;
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }

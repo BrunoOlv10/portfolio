@@ -22,7 +22,7 @@ export class ProjectsComponent {
   atEnd = false;
   selectedProject: Project | null = null;
 
-  showElements = false;
+  showAnimation = false;
 
   observer!: IntersectionObserver;
 
@@ -72,11 +72,11 @@ export class ProjectsComponent {
       const entry = entries[0];
 
       if (entry.isIntersecting && this.isScrollingDown) {
-        this.showElements = true;
+        this.showAnimation = true;
       }
 
       if (!entry.isIntersecting && !this.isScrollingDown) {
-        this.showElements = false;
+        this.showAnimation = false;
       }
     });
 
