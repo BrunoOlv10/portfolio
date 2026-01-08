@@ -20,7 +20,7 @@ export class AboutComponent {
   lastScrollTop = 0;
   isScrollingDown = false;
 
-  observer!: IntersectionObserver;
+  private observer!: IntersectionObserver;
 
   initialCheck = false;
 
@@ -70,6 +70,7 @@ export class AboutComponent {
   copyPopup(value: string, key: string) {
     navigator.clipboard.writeText(value).then(() => {
       this.copiedKey = key;
+      
       setTimeout(() => {
         if (this.copiedKey === key) {
           this.copiedKey = null;

@@ -13,18 +13,18 @@ import { Experience } from '../../shared/models/experience.model';
 export class ExperienceComponent {
   @ViewChild('experienceSection') experienceSection!: ElementRef<HTMLDivElement>;
 
-  showAnimation = false;
-
-  observer!: IntersectionObserver;
-
-  initialCheck = false;
-
-  lastScrollTop = 0;
-  isScrollingDown = false;
-  
   experiences: Experience[] = EXPERIENCES;
 
+  showAnimation = false;
+  
+  lastScrollTop = 0;
+  isScrollingDown = false;
+
   openedIndex: number | null = null;
+
+  private observer!: IntersectionObserver;
+
+  initialCheck = false;
 
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);
@@ -50,8 +50,13 @@ export class ExperienceComponent {
     this.initialCheck = false;
   }
 
+  ngOnDestroy() {
+    this.observer.disconnect();
+  }
+
   handleScroll = () => {
     const scrollTop = window.scrollY;
+
     this.isScrollingDown = scrollTop > this.lastScrollTop;
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }

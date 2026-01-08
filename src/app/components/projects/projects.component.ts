@@ -24,7 +24,7 @@ export class ProjectsComponent {
 
   showAnimation = false;
 
-  observer!: IntersectionObserver;
+  private observer!: IntersectionObserver;
 
   initialCheck = false;
 
@@ -120,6 +120,7 @@ export class ProjectsComponent {
 
   handleScroll = () => {
     const scrollTop = window.scrollY;
+    
     this.isScrollingDown = scrollTop > this.lastScrollTop;
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }

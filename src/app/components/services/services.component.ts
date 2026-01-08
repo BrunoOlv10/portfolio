@@ -13,22 +13,22 @@ import { fadeSlideUp } from '../../shared/animations/animations';
 export class ServicesComponent {
   @ViewChild('serviceSection') serviceSection!: ElementRef<HTMLDivElement>;
 
+  services: Service[] = SERVICES;
+
   showAnimation = false;
 
-  observer!: IntersectionObserver;
-
-  initialCheck = false;
+  visiblePopup: string | null = null;
+  copiedKey: string | null = null;
 
   lastScrollTop = 0;
   isScrollingDown = false;
 
+  private observer!: IntersectionObserver;
+
+  initialCheck = false;
+
   email = "bruno.olvslv@gmail.com";
   whatsapp = "+55 (11) 97675-4965";
-
-  visiblePopup: string | null = null;
-  copiedKey: string | null = null;
-  
-  services: Service[] = SERVICES;
 
   ngOnInit() {
     window.addEventListener('scroll', this.handleScroll, true);
@@ -54,8 +54,13 @@ export class ServicesComponent {
     this.initialCheck = false;
   }
 
+  ngOnDestroy() {
+    this.observer.disconnect();
+  }
+
   handleScroll = () => {
     const scrollTop = window.scrollY;
+
     this.isScrollingDown = scrollTop > this.lastScrollTop;
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
@@ -67,6 +72,7 @@ export class ServicesComponent {
   copyPopup(value: string, key: string) {
     navigator.clipboard.writeText(value).then(() => {
       this.copiedKey = key;
+
       setTimeout(() => {
         if (this.copiedKey === key) {
           this.copiedKey = null;

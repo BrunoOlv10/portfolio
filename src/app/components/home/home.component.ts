@@ -82,6 +82,7 @@ export class HomeComponent {
   copyPopup(value: string, key: string) {
     navigator.clipboard.writeText(value).then(() => {
       this.copiedKey = key;
+      
       setTimeout(() => {
         if (this.copiedKey === key) {
           this.copiedKey = null;
