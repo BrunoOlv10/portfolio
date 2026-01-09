@@ -12,6 +12,8 @@ export class SkillsComponent {
 
   repeatCount = 1;
 
+  repeatedIcons: string[] = [];
+
   ngOnInit() {
     this.calculateRepeatCount();
   }
@@ -26,16 +28,15 @@ export class SkillsComponent {
     const screenWidth = window.innerWidth;
     const minWidthNeeded = screenWidth * 2;
     const iconsPerRow = this.icons.length * iconWidth;
+
     this.repeatCount = Math.ceil(minWidthNeeded / iconsPerRow);
+    
+    this.updateRepeatedIcons();
   }
 
-  get repeatedIcons(): string[] {
-    const arr: string[] = [];
-
-    for (let i = 0; i < this.repeatCount; i++) {
-      arr.push(...this.icons);
-    }
-    
-    return arr;
+  updateRepeatedIcons() {
+    this.repeatedIcons = Array(this.repeatCount)
+      .fill(this.icons)
+      .flat();
   }
 }
